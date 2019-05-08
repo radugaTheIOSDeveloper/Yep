@@ -28,7 +28,7 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationItem.hidesBackButton = YES;
 //
-    self.navigationItem.title = @"YET";
+    self.navigationItem.title = @"YEP";
 //
 
     [self backButton];

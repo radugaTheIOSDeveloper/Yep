@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectMay/Page/RootViewController.m"
-            timestampString = "578191058.617152"
+            timestampString = "579012166.380168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -144,6 +144,22 @@
             startingLineNumber = "107"
             endingLineNumber = "107"
             landmarkName = "-didTapLabelWithGesturedateLabel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectMay/Page/RootViewController.m"
+            timestampString = "579012166.397514"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-regButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
