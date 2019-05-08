@@ -55,4 +55,9 @@
 }
 */
 
+- (IBAction)backTable:(id)sender {
+    
+    [self performSegueWithIdentifier:@"backTable" sender:self];
+
+}
 @end

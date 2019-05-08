@@ -10,4 +10,6 @@
 
 @interface DetailTable : UIViewController
 
+- (IBAction)backTable:(id)sender;
+
 @end
