@@ -159,7 +159,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                         <connections>
                                             <action selector="phoneAct:" destination="ba1-A1-3hq" eventType="touchDown" id="QRg-Da-dGE"/>
                                             <outlet property="delegate" destination="ba1-A1-3hq" id="LWK-yR-5wu"/>
@@ -378,7 +378,7 @@
                                     <constraint firstAttribute="width" constant="333" id="tLd-dp-olV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="город" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-In-FJf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-In-FJf">
                                 <rect key="frame" x="28" y="253" width="319" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NSK-E4-1Sj"/>
@@ -395,7 +395,7 @@
                                     <constraint firstAttribute="width" constant="333" id="ocd-OT-dvm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пол" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wud-8B-HCW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пол" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wud-8B-HCW">
                                 <rect key="frame" x="28" y="369" width="319" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="319" id="cSz-c3-JCh"/>
@@ -405,7 +405,7 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="возраст" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0J9-wF-Kaw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0J9-wF-Kaw">
                                 <rect key="frame" x="28" y="311" width="319" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="319" id="C9K-cA-9bf"/>
@@ -1144,9 +1144,6 @@
                         <viewLayoutGuide key="safeArea" id="lH1-BO-7dL"/>
                     </view>
                     <navigationItem key="navigationItem" title="YET" id="xdi-jQ-YWu">
-                        <barButtonItem key="leftBarButtonItem" image="LeftItem" id="ubk-tN-csR">
-                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="RightItem" id="mZU-ya-aah">
                             <color key="tintColor" red="0.5450980392" green="0.18823529410000001" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -1652,7 +1649,6 @@
         <image name="IconMenuSetting" width="22" height="22"/>
         <image name="IconMenuShare" width="31" height="31"/>
         <image name="IconPhoto" width="64" height="64"/>
-        <image name="LeftItem" width="21" height="21"/>
         <image name="Logo" width="286" height="269"/>
         <image name="NextBtn" width="335" height="57"/>
         <image name="RadioActive" width="28" height="30"/>
@@ -1666,6 +1662,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="H9A-Or-02P"/>
         <segue reference="15U-0N-xSj"/>
-        <segue reference="INs-gS-gYe"/>
+        <segue reference="aW3-5R-dWp"/>
     </inferredMetricsTieBreakers>
 </document>
