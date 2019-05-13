@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *smsText;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) NSString * phoneNumber;
+
+
 
 - (IBAction)smsAct:(id)sender;
 

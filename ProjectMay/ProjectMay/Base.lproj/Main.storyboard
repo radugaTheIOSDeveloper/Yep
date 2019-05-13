@@ -152,7 +152,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваш телефон" textAlignment="center" minimumFontSize="17" background="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-YF-jaB">
-                                        <rect key="frame" x="21" y="250" width="333" height="50"/>
+                                        <rect key="frame" x="21" y="318.5" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="333" id="EwV-fB-tNK"/>
                                             <constraint firstAttribute="height" constant="50" id="mvm-zL-fuo"/>
@@ -165,20 +165,6 @@
                                             <outlet property="delegate" destination="ba1-A1-3hq" id="LWK-yR-5wu"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваше имя" textAlignment="center" minimumFontSize="17" background="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="rnc-in-TXe">
-                                        <rect key="frame" x="21" y="308" width="333" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="333" id="9Mg-Df-aNb"/>
-                                            <constraint firstAttribute="height" constant="50" id="cdO-Ke-IrD"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
-                                        <connections>
-                                            <action selector="nameAct:" destination="ba1-A1-3hq" eventType="touchDown" id="2I1-Ew-Kne"/>
-                                            <outlet property="delegate" destination="ba1-A1-3hq" id="LT0-GX-Y2p"/>
-                                        </connections>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="si7-sN-gbe">
                                         <rect key="frame" x="19" y="497" width="336" height="57"/>
                                         <constraints>
@@ -188,11 +174,10 @@
                                         <state key="normal" image="NextBtn"/>
                                         <connections>
                                             <action selector="nextBtn:" destination="ba1-A1-3hq" eventType="touchUpInside" id="DGg-OC-QnH"/>
-                                            <segue destination="mEt-Ch-iP9" kind="show" identifier="sms" id="hSj-mY-OIJ"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cP-zo-LQZ">
-                                        <rect key="frame" x="71" y="186" width="232" height="56"/>
+                                        <rect key="frame" x="71" y="254.5" width="232" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="KxW-JB-fXu"/>
                                             <constraint firstAttribute="width" constant="232" id="euj-o0-BJP"/>
@@ -204,7 +189,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="UfG-TO-xu7"/>
-                                    <constraint firstItem="rnc-in-TXe" firstAttribute="top" secondItem="kq0-YF-jaB" secondAttribute="bottom" constant="8" id="mrH-uZ-DA9"/>
+                                    <constraint firstItem="kq0-YF-jaB" firstAttribute="centerX" secondItem="0ht-KI-ber" secondAttribute="centerX" id="dLo-qM-3i0"/>
                                     <constraint firstItem="kq0-YF-jaB" firstAttribute="top" secondItem="7cP-zo-LQZ" secondAttribute="bottom" constant="8" id="x2a-0H-QnU"/>
                                     <constraint firstAttribute="height" constant="667" id="xTG-Us-uQP"/>
                                 </constraints>
@@ -212,8 +197,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rnc-in-TXe" firstAttribute="centerY" secondItem="TyC-4A-5Iw" secondAttribute="centerY" id="2VC-ci-1qo"/>
-                            <constraint firstItem="rnc-in-TXe" firstAttribute="centerX" secondItem="TyC-4A-5Iw" secondAttribute="centerX" id="EsO-9r-qyF"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="top" secondItem="TyC-4A-5Iw" secondAttribute="top" id="HHG-iL-enZ"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="trailing" secondItem="Sfm-3Y-RA9" secondAttribute="trailing" id="LN1-qz-XRL"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="leading" secondItem="Sfm-3Y-RA9" secondAttribute="leading" id="RH2-GH-6MU"/>
@@ -224,15 +207,16 @@
                             <constraint firstItem="0ht-KI-ber" firstAttribute="leading" secondItem="TyC-4A-5Iw" secondAttribute="leading" id="tjA-uz-vSm"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="top" secondItem="4NE-mK-L3W" secondAttribute="top" id="vPq-I2-cI5"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="bottom" secondItem="Sfm-3Y-RA9" secondAttribute="bottom" id="xDl-mG-g4W"/>
+                            <constraint firstItem="kq0-YF-jaB" firstAttribute="centerY" secondItem="Sfm-3Y-RA9" secondAttribute="centerY" id="zf7-cK-hAJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sfm-3Y-RA9"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zhu-Cr-NEh"/>
                     <connections>
                         <outlet property="labelReg" destination="7cP-zo-LQZ" id="Maf-PE-6sJ"/>
-                        <outlet property="nameTextOutlet" destination="rnc-in-TXe" id="j95-R6-xg1"/>
                         <outlet property="phoneTextOutlet" destination="kq0-YF-jaB" id="7nz-pu-e7q"/>
                         <outlet property="scrollView" destination="0ht-KI-ber" id="LGa-dQ-MEt"/>
+                        <segue destination="mEt-Ch-iP9" kind="show" identifier="sms" id="t6H-VM-1vg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GH-uY-ae8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,7 +245,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-ot-sOW">
-                                        <rect key="frame" x="71" y="186" width="232" height="56"/>
+                                        <rect key="frame" x="71" y="254.5" width="232" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="232" id="GU1-ch-Put"/>
                                             <constraint firstAttribute="height" constant="56" id="luH-Pv-rkH"/>
@@ -271,7 +255,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите код из СМС" textAlignment="center" minimumFontSize="17" background="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="vvt-qS-2Hb">
-                                        <rect key="frame" x="21" y="250" width="333" height="50"/>
+                                        <rect key="frame" x="21" y="318.5" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="333" id="1eP-ic-mCJ"/>
                                             <constraint firstAttribute="height" constant="50" id="F5V-vD-Mq0"/>
@@ -297,14 +281,15 @@
                             <constraint firstItem="vvt-qS-2Hb" firstAttribute="centerX" secondItem="hbU-kR-1b1" secondAttribute="centerX" id="0YC-op-vr5"/>
                             <constraint firstItem="hbU-kR-1b1" firstAttribute="top" secondItem="XA8-H1-EKA" secondAttribute="top" id="7Ke-ZT-jU5"/>
                             <constraint firstItem="R2G-zz-N6t" firstAttribute="leading" secondItem="MmA-Te-Hzr" secondAttribute="leading" id="9Qw-0M-Sby"/>
-                            <constraint firstItem="hbU-kR-1b1" firstAttribute="top" secondItem="nsj-ot-sOW" secondAttribute="bottom" constant="-242" id="PB7-Or-bpO"/>
                             <constraint firstItem="R2G-zz-N6t" firstAttribute="trailing" secondItem="MmA-Te-Hzr" secondAttribute="trailing" id="Wab-S8-VHS"/>
                             <constraint firstItem="hbU-kR-1b1" firstAttribute="trailing" secondItem="MmA-Te-Hzr" secondAttribute="trailing" id="Wc0-w9-nvT"/>
                             <constraint firstItem="R2G-zz-N6t" firstAttribute="top" secondItem="XA8-H1-EKA" secondAttribute="top" id="Wgk-bH-K2n"/>
                             <constraint firstItem="hbU-kR-1b1" firstAttribute="bottom" secondItem="MmA-Te-Hzr" secondAttribute="bottom" id="Z1i-jD-arc"/>
                             <constraint firstItem="nsj-ot-sOW" firstAttribute="centerX" secondItem="hbU-kR-1b1" secondAttribute="centerX" id="b2d-v0-dtx"/>
                             <constraint firstItem="hbU-kR-1b1" firstAttribute="leading" secondItem="MmA-Te-Hzr" secondAttribute="leading" id="h3N-A9-A2c"/>
+                            <constraint firstItem="vvt-qS-2Hb" firstAttribute="centerY" secondItem="MmA-Te-Hzr" secondAttribute="centerY" id="o8q-Tt-Mhs"/>
                             <constraint firstItem="G6S-Wa-Jo2" firstAttribute="centerX" secondItem="hbU-kR-1b1" secondAttribute="centerX" id="ogR-EZ-GGi"/>
+                            <constraint firstItem="vvt-qS-2Hb" firstAttribute="centerX" secondItem="MmA-Te-Hzr" secondAttribute="centerX" id="u6x-1R-ePt"/>
                             <constraint firstItem="G6S-Wa-Jo2" firstAttribute="top" secondItem="hbU-kR-1b1" secondAttribute="bottom" constant="-159" id="upH-EL-Qjs"/>
                             <constraint firstItem="R2G-zz-N6t" firstAttribute="bottom" secondItem="MmA-Te-Hzr" secondAttribute="bottom" id="whN-dN-CFe"/>
                         </constraints>
@@ -530,7 +515,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пригласить друга" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezY-QU-bvq">
-                                <rect key="frame" x="116" y="129" width="143.5" height="21"/>
+                                <rect key="frame" x="116" y="173" width="143.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -892,7 +877,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="    Константин" textAlignment="natural" minimumFontSize="17" background="TextEditSettings" translatesAutoresizingMaskIntoConstraints="NO" id="moR-Sm-lay">
-                                        <rect key="frame" x="21" y="128" width="332" height="50"/>
+                                        <rect key="frame" x="21" y="84" width="332" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="332" id="7Gv-b1-Zm3"/>
                                             <constraint firstAttribute="height" constant="50" id="gfF-XF-UXz"/>
@@ -906,7 +891,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="to0-HI-0WT">
-                                        <rect key="frame" x="28" y="433" width="115" height="30"/>
+                                        <rect key="frame" x="28" y="389" width="115" height="30"/>
                                         <state key="normal" title="  Женский" image="RadioInactive"/>
                                         <connections>
                                             <action selector="woomen:" destination="yWK-3a-sTq" eventType="touchUpInside" id="5GY-Cr-mHo"/>
@@ -919,19 +904,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Возраст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pm2-iz-K0d">
-                                        <rect key="frame" x="21" y="273" width="69.5" height="21"/>
+                                        <rect key="frame" x="21" y="229" width="69.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пол" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUy-Q2-ld0">
-                                        <rect key="frame" x="21" y="366" width="33.5" height="21"/>
+                                        <rect key="frame" x="21" y="322" width="33.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-fe-KvU">
-                                        <rect key="frame" x="21" y="99" width="35.5" height="21"/>
+                                        <rect key="frame" x="21" y="55" width="35.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -943,7 +928,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="     Konstantin@mail.ru" textAlignment="natural" minimumFontSize="17" background="TextEditSettings" translatesAutoresizingMaskIntoConstraints="NO" id="yAl-2A-5Cj">
-                                        <rect key="frame" x="21" y="215" width="332" height="50"/>
+                                        <rect key="frame" x="21" y="171" width="332" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="O0Y-9I-6CC"/>
                                             <constraint firstAttribute="width" constant="332" id="ZqL-p7-wTt"/>
@@ -957,14 +942,14 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fZ-vM-07L">
-                                        <rect key="frame" x="28" y="395" width="116" height="30"/>
+                                        <rect key="frame" x="28" y="351" width="116" height="30"/>
                                         <state key="normal" title="  Мужской" image="RadioActive"/>
                                         <connections>
                                             <action selector="men:" destination="yWK-3a-sTq" eventType="touchUpInside" id="ted-bG-b2Y"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L55-IE-r4B">
-                                        <rect key="frame" x="21" y="308" width="332" height="50"/>
+                                        <rect key="frame" x="21" y="264" width="332" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="teV-On-0vE"/>
                                             <constraint firstAttribute="width" constant="332" id="wf4-ys-evu"/>
@@ -978,7 +963,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDv-we-a1K">
-                                        <rect key="frame" x="21" y="507" width="332" height="50"/>
+                                        <rect key="frame" x="21" y="463" width="332" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="332" id="phZ-CU-Sac"/>
                                             <constraint firstAttribute="height" constant="50" id="xYJ-SE-zdR"/>

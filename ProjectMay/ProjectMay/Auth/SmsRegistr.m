@@ -7,8 +7,10 @@
 //
 
 #import "SmsRegistr.h"
+#import "API.h"
 
 @interface SmsRegistr ()
+@property (strong, nonatomic) NSString * messageAlert;
 
 @end
 
@@ -16,7 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 0.f;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
+    [self.view setUserInteractionEnabled:YES];
+    
+    NSLog(@"phone number = %@", self.phoneNumber);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +58,8 @@
     
     if ([textField isEqual:self.smsText]) {
         
-        [self performSegueWithIdentifier:@"nextReg" sender:self];
+        [self confirmOnetimePass:self.phoneNumber onetime_pass:self.smsText.text];
+        [self.activityIndicator startAnimating];
 
     }
     return YES;
@@ -60,7 +71,58 @@
 }
 
 - (IBAction)nextBtn:(id)sender {
-    [self performSegueWithIdentifier:@"nextReg" sender:self];
-
+    [self.activityIndicator startAnimating];
+    [self confirmOnetimePass:self.phoneNumber onetime_pass:self.smsText.text];
 }
+
+
+-(void) confirmOnetimePass:(NSString *)numTel
+              onetime_pass:(NSString *)onetime_pass{
+    
+    [self.activityIndicator stopAnimating];
+
+    [[API apiManager]confirmOnetimePass:numTel
+                            onetime_pass:onetime_pass
+     
+
+                              onSuccess:^(NSDictionary *responseObject) {
+                                  [self performSegueWithIdentifier:@"nextReg" sender:self];
+
+        } onFailure:^(NSError *error, NSInteger statusCode) {
+
+            
+            
+            NSString * errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+            
+            
+            NSData *data = [errResponse dataUsingEncoding:NSUTF8StringEncoding];
+            id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            NSLog(@"%@",[json objectForKey:@"message"]);
+            
+            
+            self.messageAlert = [json objectForKey:@"message"];
+            [self alerts];
+        }];
+}
+
+-(void) alerts{
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Ошибка регистрации!"
+                                 message:self.messageAlert
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 @end
