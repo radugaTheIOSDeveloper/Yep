@@ -25,6 +25,11 @@
     self.activityIndicator.color = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
     [self.view setUserInteractionEnabled:YES];
     
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    
+    
     NSLog(@"phone number = %@", self.phoneNumber);
     
 }
@@ -39,18 +44,18 @@
     [self.smsText resignFirstResponder];
 }
 
--(void) textFieldDidBeginEditing:(UITextField *)textField{
-    
-    CGPoint scrollPoint = CGPointMake(0, 130);
-    [self.scrollView setContentOffset:scrollPoint animated:NO];
-    
-}
-
--(void)textFieldDidEndEditing:(UITextField*)textField{
-    
-    [self.scrollView setContentOffset:CGPointZero animated:NO];
-    
-}
+//-(void) textFieldDidBeginEditing:(UITextField *)textField{
+//    
+//    CGPoint scrollPoint = CGPointMake(0, 130);
+//    [self.scrollView setContentOffset:scrollPoint animated:NO];
+//    
+//}
+//
+//-(void)textFieldDidEndEditing:(UITextField*)textField{
+//    
+//    [self.scrollView setContentOffset:CGPointZero animated:NO];
+//    
+//}
 
 
 
@@ -58,8 +63,8 @@
     
     if ([textField isEqual:self.smsText]) {
         
-        [self confirmOnetimePass:self.phoneNumber onetime_pass:self.smsText.text];
         [self.activityIndicator startAnimating];
+        [self confirmOnetimePass:self.phoneNumber onetime_pass:self.smsText.text];
 
     }
     return YES;

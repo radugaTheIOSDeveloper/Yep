@@ -20,16 +20,14 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="UrS-Pc-bT3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="ECu-v9-jPR"/>
-                                    <constraint firstAttribute="height" constant="667" id="EU6-fS-0Gb"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UrS-Pc-bT3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YxB-c1-fOF"/>
-                            <constraint firstItem="UrS-Pc-bT3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="kwg-o9-0sK"/>
+                            <constraint firstItem="UrS-Pc-bT3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E1m-ch-J4K"/>
+                            <constraint firstItem="UrS-Pc-bT3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="U8d-1g-32y"/>
+                            <constraint firstItem="UrS-Pc-bT3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WEU-rm-EBE"/>
+                            <constraint firstItem="UrS-Pc-bT3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="WNj-7D-zlm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
