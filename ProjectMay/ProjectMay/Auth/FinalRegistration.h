@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSMutableArray * arrayFloor;
 @property (weak, nonatomic)  UIDatePicker * pickerDateView;
 
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)regBtn:(id)sender;
 

@@ -7,8 +7,11 @@
 //
 
 #import "FinalRegistration.h"
+#import "API.h"
 
 @interface FinalRegistration ()
+
+@property (strong, nonatomic) NSMutableArray * citys;
 
 @end
 
@@ -33,11 +36,21 @@ NSString * str;
                  @"Адлер",@"Ростов", nil];
     
     
+    
     arrayFloor = [[NSMutableArray alloc]initWithObjects:@"Мужской",@"Женский", nil];
     
     
+    self.citys = [NSMutableArray array];
     
-
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 0.f;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
+    [self.view setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
     
     self.pickerView.delegate= self;
     self.pickerView.dataSource=self ;
@@ -76,9 +89,48 @@ NSString * str;
     status = 1;
     
     
+    [self.activityIndicator startAnimating];
+    self.activityIndicator.alpha = 1.f;
+    [self.view setUserInteractionEnabled:NO];
+    [self getCiys];
     
 }
 
+
+-(void) getCiys {
+    
+    [[API apiManager]getCitys:^(NSDictionary *responceObject) {
+        [self.activityIndicator stopAnimating];
+        self.activityIndicator.alpha = 0.f;
+        [self.view setUserInteractionEnabled:YES];
+        NSMutableArray * city = [responceObject valueForKey:@"name"];
+        self.citys = city;
+        NSLog(@"%@",city);
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        [self.activityIndicator stopAnimating];
+        self.activityIndicator.alpha = 0.f;
+        [self.view setUserInteractionEnabled:YES];
+        NSLog(@"%@",error);
+    }];
+    
+}
+
+
+-(void) dismissKeyboard{
+    
+    [self.nameOtl resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    if ([textField isEqual:self.nameOtl]) {
+        
+        [self dismissKeyboard];
+        
+        
+    }
+    return YES;
+}
 
 
 - (void)didTapLabelWithGesturesityLabel:(UITapGestureRecognizer *)tapGesture {
@@ -155,7 +207,7 @@ NSString * str;
   
     
     if (status == 1){
-        return  arrayCity.count;
+        return  self.citys.count;
 
     } else if (status == 2){
         
@@ -172,8 +224,14 @@ NSString * str;
     
 
     if (status == 1) {
-        
-        return [arrayCity objectAtIndex:row];
+        if (self.citys.count == 0) {
+            
+            return [self.arrayCity objectAtIndex:row];
+            
+        }else{
+            return [self.citys objectAtIndex:row];
+
+        }
     }else if (status == 2){
         return [arrayFloor objectAtIndex:row];
 
@@ -189,7 +247,13 @@ NSString * str;
 
     
     if (status == 1) {
-        str = [arrayCity objectAtIndex:row];
+        
+        if (self.citys.count == 0) {
+            str = [self.arrayCity objectAtIndex:row];
+        }else{
+            str = [self.citys objectAtIndex:row];
+
+        }
         
     }else if (status == 2){
         

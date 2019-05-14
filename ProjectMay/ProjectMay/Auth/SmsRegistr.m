@@ -8,6 +8,7 @@
 
 #import "SmsRegistr.h"
 #import "API.h"
+#import <Security/Security.h>
 
 @interface SmsRegistr ()
 @property (strong, nonatomic) NSString * messageAlert;
@@ -64,6 +65,8 @@
     if ([textField isEqual:self.smsText]) {
         
         [self.activityIndicator startAnimating];
+        self.activityIndicator.alpha = 1.f;
+
         [self confirmOnetimePass:self.phoneNumber onetime_pass:self.smsText.text];
 
     }
@@ -77,6 +80,8 @@
 
 - (IBAction)nextBtn:(id)sender {
     [self.activityIndicator startAnimating];
+    self.activityIndicator.alpha = 1.f;
+
     [self confirmOnetimePass:self.phoneNumber onetime_pass:self.smsText.text];
 }
 
@@ -85,17 +90,28 @@
               onetime_pass:(NSString *)onetime_pass{
     
     [self.activityIndicator stopAnimating];
+    self.activityIndicator.alpha = 0.f;
 
     [[API apiManager]confirmOnetimePass:numTel
                             onetime_pass:onetime_pass
-     
+  
 
                               onSuccess:^(NSDictionary *responseObject) {
+                                  [self.activityIndicator stopAnimating];
+                                  self.activityIndicator.alpha = 0.f;
+                                  
+                                  
+                                  
+                                  [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
+                                  NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                                  [userDefaults setObject:@"true" forKey:@"token"];
+                                  
                                   [self performSegueWithIdentifier:@"nextReg" sender:self];
 
         } onFailure:^(NSError *error, NSInteger statusCode) {
 
-            
+            [self.activityIndicator stopAnimating];
+            self.activityIndicator.alpha = 0.f;
             
             NSString * errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
             

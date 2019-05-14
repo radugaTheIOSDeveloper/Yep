@@ -49,6 +49,8 @@
                               onSuccess:^(NSDictionary *responseObject) {
 
                                   [self.activityIndicator stopAnimating];
+                                  self.activityIndicator.alpha = 0.f;
+
                                   [self.view setUserInteractionEnabled:YES];
 
                                   [self performSegueWithIdentifier:@"sms" sender:self];
@@ -57,6 +59,8 @@
                               }  onFailure:^(NSError *error, NSInteger statusCode) {
 
                                   [self.activityIndicator stopAnimating];
+                                  self.activityIndicator.alpha = 0.f;
+
                                   [self.view setUserInteractionEnabled:YES];
                                 
                                   
@@ -138,6 +142,7 @@
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
         [self.activityIndicator startAnimating];
+        self.activityIndicator.alpha = 1.f;
         [self onetimePass:stringRange];
         
     
@@ -153,6 +158,7 @@
         NSMutableString *stringRange = [self.phoneTextOutlet.text mutableCopy];
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
+        self.activityIndicator.alpha = 1.f;
         [self.activityIndicator startAnimating];
         [self onetimePass:stringRange];
     

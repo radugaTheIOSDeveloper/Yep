@@ -7,6 +7,8 @@
 //
 
 #import "API.h"
+#import <Security/Security.h>
+#import <KeychainItemWrapper.h>
 
 @implementation API
 
@@ -29,6 +31,21 @@
     }
     return self;
 }
+
+
+-(void) setToken:(NSString *) token{
+    
+    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
+    [wraper setObject:token forKey:(id)kSecValueData];
+    // NSLog(@"%@",[wraper objectForKey:(id)kSecValueData]);
+    
+}
+
+-(NSString *) getToken{
+    KeychainItemWrapper * wraper = [[KeychainItemWrapper alloc]initWithIdentifier:@"token" accessGroup:nil];
+    return [wraper objectForKey:(id)kSecValueData];
+}
+
 
 -(void) confirmOnetimePass:(NSString *)numPhone
                       onetime_pass:(NSString *)onetime_pass
@@ -92,6 +109,34 @@
                              failure(error, response.statusCode);
                          }
                      }];
+    
+}
+
+
+
+
+
+-(void)getCitys:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
+    
+    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+    [self.sessionManager GET:@"cities/"
+                  parameters:nil
+                    progress:nil
+                     success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                         
+                         if(success){
+                             success(responseObject);
+                                   NSLog(@"%@",responseObject);
+                         }
+                     }
+                     failure:^(NSURLSessionTask *operation, NSError *error) {
+                             NSLog(@"error%@",error);
+                         if(failure){
+                             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                             failure(error, response.statusCode);
+                         }
+                     }];
+
     
 }
 

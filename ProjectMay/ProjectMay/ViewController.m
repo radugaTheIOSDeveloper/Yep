@@ -19,6 +19,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.logoImage.alpha = 0.f;
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+
+    NSLog(@"наш токен рапвен %@", [userDefaults objectForKey:@"token"]);
 
     [UIView animateWithDuration:1.6 animations:^{
         self.logoImage.alpha = 1.0f;

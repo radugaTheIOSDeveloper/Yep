@@ -141,23 +141,19 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="TyC-4A-5Iw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="VlR-a8-d6C"/>
-                                    <constraint firstAttribute="height" constant="667" id="xer-wP-2Fn"/>
-                                </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-KI-ber">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-KI-ber">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваш телефон" textAlignment="center" minimumFontSize="17" background="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-YF-jaB">
-                                        <rect key="frame" x="21" y="318.5" width="333" height="50"/>
+                                        <rect key="frame" x="21" y="319" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="333" id="EwV-fB-tNK"/>
                                             <constraint firstAttribute="height" constant="50" id="mvm-zL-fuo"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="go"/>
                                         <connections>
                                             <action selector="phoneAct:" destination="ba1-A1-3hq" eventType="touchDown" id="QRg-Da-dGE"/>
                                             <outlet property="delegate" destination="ba1-A1-3hq" id="LWK-yR-5wu"/>
@@ -175,7 +171,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cP-zo-LQZ">
-                                        <rect key="frame" x="71" y="254.5" width="232" height="56"/>
+                                        <rect key="frame" x="71" y="255" width="232" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="KxW-JB-fXu"/>
                                             <constraint firstAttribute="width" constant="232" id="euj-o0-BJP"/>
@@ -186,10 +182,9 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="UfG-TO-xu7"/>
-                                    <constraint firstItem="kq0-YF-jaB" firstAttribute="centerX" secondItem="0ht-KI-ber" secondAttribute="centerX" id="dLo-qM-3i0"/>
-                                    <constraint firstItem="kq0-YF-jaB" firstAttribute="top" secondItem="7cP-zo-LQZ" secondAttribute="bottom" constant="8" id="x2a-0H-QnU"/>
-                                    <constraint firstAttribute="height" constant="667" id="xTG-Us-uQP"/>
+                                    <constraint firstAttribute="bottom" secondItem="7cP-zo-LQZ" secondAttribute="bottom" constant="356" id="D7G-Eg-GgJ"/>
+                                    <constraint firstItem="kq0-YF-jaB" firstAttribute="top" secondItem="7cP-zo-LQZ" secondAttribute="bottom" constant="8" symbolic="YES" id="XOi-Sx-R19"/>
+                                    <constraint firstAttribute="trailing" secondItem="7cP-zo-LQZ" secondAttribute="trailing" constant="72" id="Z7q-65-IpZ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -198,13 +193,16 @@
                             <constraint firstItem="0ht-KI-ber" firstAttribute="top" secondItem="TyC-4A-5Iw" secondAttribute="top" id="HHG-iL-enZ"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="trailing" secondItem="Sfm-3Y-RA9" secondAttribute="trailing" id="LN1-qz-XRL"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="leading" secondItem="Sfm-3Y-RA9" secondAttribute="leading" id="RH2-GH-6MU"/>
+                            <constraint firstItem="TyC-4A-5Iw" firstAttribute="trailing" secondItem="Sfm-3Y-RA9" secondAttribute="trailing" id="RWC-LX-L2q"/>
                             <constraint firstItem="kq0-YF-jaB" firstAttribute="centerX" secondItem="TyC-4A-5Iw" secondAttribute="centerX" id="Sjs-6K-ggd"/>
+                            <constraint firstAttribute="bottom" secondItem="TyC-4A-5Iw" secondAttribute="bottom" id="UXk-Lr-G1T"/>
                             <constraint firstItem="7cP-zo-LQZ" firstAttribute="centerX" secondItem="TyC-4A-5Iw" secondAttribute="centerX" id="X37-7G-kGK"/>
                             <constraint firstItem="si7-sN-gbe" firstAttribute="centerX" secondItem="TyC-4A-5Iw" secondAttribute="centerX" id="XPv-Gl-KwS"/>
                             <constraint firstItem="si7-sN-gbe" firstAttribute="top" secondItem="TyC-4A-5Iw" secondAttribute="bottom" constant="-170" id="dyV-cZ-5AR"/>
-                            <constraint firstItem="0ht-KI-ber" firstAttribute="leading" secondItem="TyC-4A-5Iw" secondAttribute="leading" id="tjA-uz-vSm"/>
+                            <constraint firstItem="TyC-4A-5Iw" firstAttribute="top" secondItem="4NE-mK-L3W" secondAttribute="top" id="tu0-CM-Fdz"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="top" secondItem="4NE-mK-L3W" secondAttribute="top" id="vPq-I2-cI5"/>
                             <constraint firstItem="0ht-KI-ber" firstAttribute="bottom" secondItem="Sfm-3Y-RA9" secondAttribute="bottom" id="xDl-mG-g4W"/>
+                            <constraint firstItem="TyC-4A-5Iw" firstAttribute="leading" secondItem="Sfm-3Y-RA9" secondAttribute="leading" id="xqt-ry-yLP"/>
                             <constraint firstItem="kq0-YF-jaB" firstAttribute="centerY" secondItem="Sfm-3Y-RA9" secondAttribute="centerY" id="zf7-cK-hAJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sfm-3Y-RA9"/>
@@ -242,16 +240,6 @@
                                             <action selector="nextBtn:" destination="mEt-Ch-iP9" eventType="touchUpInside" id="siL-uj-jHB"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-ot-sOW">
-                                        <rect key="frame" x="71" y="254.5" width="232" height="56"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="232" id="GU1-ch-Put"/>
-                                            <constraint firstAttribute="height" constant="56" id="luH-Pv-rkH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите код из СМС" textAlignment="center" minimumFontSize="17" background="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="vvt-qS-2Hb">
                                         <rect key="frame" x="21" y="318.5" width="333" height="50"/>
                                         <constraints>
@@ -260,17 +248,27 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
                                         <connections>
                                             <action selector="smsAct:" destination="mEt-Ch-iP9" eventType="touchDown" id="cjq-fH-mdH"/>
                                             <outlet property="delegate" destination="mEt-Ch-iP9" id="ez0-1f-Ch5"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-ot-sOW">
+                                        <rect key="frame" x="71" y="228" width="232" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="232" id="GU1-ch-Put"/>
+                                            <constraint firstAttribute="height" constant="56" id="luH-Pv-rkH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vvt-qS-2Hb" firstAttribute="top" secondItem="nsj-ot-sOW" secondAttribute="bottom" constant="8" id="dwh-YC-eEB"/>
+                                    <constraint firstItem="vvt-qS-2Hb" firstAttribute="top" secondItem="nsj-ot-sOW" secondAttribute="bottom" constant="34.5" id="hlG-Cq-2y1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

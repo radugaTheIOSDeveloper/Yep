@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectMay/ViewController.m"
-            timestampString = "579525900.6467609"
+            timestampString = "579533766.1955529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectMay/Auth/AuthViewController.m"
-            timestampString = "579476938.062063"
+            timestampString = "579531695.941483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "-textFieldShouldReturn:"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectMay/Auth/FinalRegistration.m"
-            timestampString = "578842434.4566669"
+            timestampString = "579531695.941718"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "-didTapLabelWithGesturedateLabel:"
             landmarkType = "7">
          </BreakpointContent>

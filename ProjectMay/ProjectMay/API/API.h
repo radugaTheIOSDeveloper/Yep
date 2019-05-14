@@ -13,6 +13,10 @@
 +(API*) apiManager;
 @property (strong, nonatomic) AFHTTPSessionManager * sessionManager;
 
+
+-(void) setToken:(NSString *)token;
+-(NSString *) getToken;
+
 -(void) confirmOnetimePass:(NSString *)numPhone
                       onetime_pass:(NSString *)onetime_pass
                  onSuccess:(void(^)(NSDictionary * responseObject)) success
@@ -22,4 +26,12 @@
 -(void) onetimePass:(NSString *)numPhone
           onSuccess:(void(^)(NSDictionary * responseObject)) success
           onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+
+-(void) citys:(void(^)(NSDictionary * responseObject)) success
+          onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+-(void) getCitys:(void(^)(NSDictionary * responceObject))success
+               onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
 @end
