@@ -32,5 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *menLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameOtl;
+- (IBAction)actName:(id)sender;
 
 @end

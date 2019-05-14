@@ -274,4 +274,6 @@ NSString * str;
 
 
 
+- (IBAction)actName:(id)sender {
+}
 @end
