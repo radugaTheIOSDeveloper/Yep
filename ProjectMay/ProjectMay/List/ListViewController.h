@@ -10,6 +10,9 @@
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+-(void) refreshView: (UIRefreshControl *) refresh;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) UIRefreshControl * refreshControl;
 
 @end

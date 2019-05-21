@@ -7,15 +7,24 @@
 //
 
 #import "ListViewController.h"
-
+#import <Security/Security.h>
+#import <KeychainItemWrapper.h>
+#import "API.h"
+#import "DetailTable.h"
 @interface ListViewController ()
-
 {
     NSArray * arrImg;
-
 }
 
 @property (strong, nonatomic) UIButton * addBtn;
+@property (strong, nonatomic) NSMutableArray * hotList;
+@property (strong, nonatomic) NSMutableArray * list;
+@property (strong, nonatomic) NSMutableArray * short_desc;
+@property (strong, nonatomic) NSMutableArray * offer_type;
+
+@property (strong, nonatomic) NSMutableArray * idl;
+
+@property (strong, nonatomic) NSString  * idTable;
 
 
 
@@ -29,6 +38,13 @@
     
     arrImg = @[@"Z1",@"Z1",@"Z1",@"Z1",@"Z1",@"Z2",@"Z2",@"Z2",@"Z2",@"Z2",@"Z2"];
     
+    self.hotList = [NSMutableArray array];
+    self.list = [NSMutableArray array];
+    self.short_desc = [NSMutableArray array];
+    self.offer_type = [NSMutableArray array];
+    self.idl = [NSMutableArray array];
+
+
     
     
     
@@ -41,19 +57,88 @@
     
     
     if (arrImg == 0) {
-        
+    
         self.tableView.alpha = 0;
-        
         
         UIImageView * img = [[UIImageView alloc]init];
         img.image = [UIImage imageNamed:@"Z3"];
         img.frame = CGRectMake(self.view.frame.size.width/2 -170 , self.view.frame.size.height/2 - 90 , 340, 180);
 
-        
-        
         [self.view addSubview:img];
         
     }
+    
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
+    self.activityIndicator.color = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
+
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.tintColor = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
+    
+    
+    
+    self.activityIndicator.alpha = 1.f;
+    [self.view setUserInteractionEnabled:NO];
+    [self.activityIndicator startAnimating];
+    
+    [self getBids];
+    
+}
+
+
+-(void) stopActivityIndicator{
+    
+    self.activityIndicator.alpha = 0.f;
+    [self.view setUserInteractionEnabled:YES];
+    [self.activityIndicator stopAnimating];
+    
+}
+
+
+
+-(void) refreshView: (UIRefreshControl *) refresh{
+    
+    [self getBids];
+}
+
+
+
+
+
+#pragma marks api
+
+-(void)getBids{
+    
+    [[API apiManager] bidsList:^(NSDictionary *responceObject) {
+        
+        [self stopActivityIndicator];
+        NSLog(@"%@",responceObject);
+        NSMutableArray * active = [responceObject valueForKey:@"offer_place"];
+        self.hotList = active;
+        
+        NSMutableArray * short_desc = [responceObject valueForKey:@"short_desc"];
+        self.short_desc = short_desc;
+        
+        NSMutableArray * idl = [responceObject valueForKey:@"id"];
+        self.idl = idl;
+        
+        NSMutableArray * offer_type = [responceObject valueForKey:@"offer_type"];
+        self.offer_type = offer_type;
+
+        NSLog(@"%ld, %ld" ,[self.hotList count], [self.short_desc  count]);
+        
+        [self.tableView reloadData];
+        
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        [self stopActivityIndicator];
+        [self.refreshControl endRefreshing];
+
+        NSLog(@"%@",error);
+    }];
     
     
 }
@@ -69,12 +154,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (arrImg.count == 0) {
-        return 0;
-    }else{
-        return arrImg.count;
-
-    }
+  
+        return [self.hotList count];
     
 }
 
@@ -82,7 +163,6 @@
     
     
     static NSString * ideCell = @"activeCell";
-    static NSString * ideCellNull = @"cellNull";
 
     
 //    if (arrImg.count == 0) {
@@ -96,8 +176,11 @@
 //        return cellACtive;
     
 //    }else{
-        NSString * str = [arrImg objectAtIndex:indexPath.row];
-        
+    
+
+    
+    
+    
         self.tableView.scrollEnabled = YES;
         self.tableView.allowsSelection = YES;
         self.tableView.backgroundColor = [UIColor whiteColor];
@@ -108,47 +191,46 @@
         UILabel * detail = (UILabel *)[cellACtive.contentView viewWithTag:12];
         UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:13];
         UIImageView * imageTwo = (UIImageView *)[cellACtive.contentView viewWithTag:14];
-        
-        
-        if ([str isEqualToString:@"Z1"]) {
-            
-            
-            image.image = [UIImage imageNamed:@"Z1"];
+
+        NSDictionary * hot = [self.hotList objectAtIndex:indexPath.row];
+
+    
+    NSString * stsr = [NSString stringWithFormat:@"%@", [self.offer_type objectAtIndex:indexPath.row]];
+    NSLog(@"%@",stsr);
+    
+
+    if ([stsr isEqualToString:@"1"]) {
+        image.image = [UIImage imageNamed:@"Z1"];
+    }else{
+        image.image = [UIImage imageNamed:@"Z2"];
+
+    }
+    
+
+    
             imageTwo.image = [UIImage imageNamed:@"NextHotImg"];
             nameSam.textColor = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
             detail.textColor = [UIColor lightGrayColor];
             
-        }else{
-            image.image = [UIImage imageNamed:@"Z2"];
-            imageTwo.image = [UIImage imageNamed:@"NextImg"];
-            detail.textColor = [UIColor lightGrayColor];
-            
-        }
+   
+    
         
         
         
-        
-        nameSam.text = @"Заголовок";
-        detail.text = @"Детальная информация";
+        nameSam.text = [hot objectForKey:@"name"];
+        detail.text = [self.short_desc objectAtIndex:indexPath.row];
         date.text = @"10:08";
         
-//        return cellACtive;
-//
-//    }
-    
-    
- 
-    
-//    imageCoin.image = [UIImage imageNamed:@"coinPast"];
-//    nameSam.textColor = [UIColor colorWithRed:111/255.0f green:113/255.0f blue:121/255.0f alpha:1];
-//    nameSam.text = [curCoinActive objectForKey:@"minutes_str"];
-//    date.text = [curCoinActive objectForKey:@"pay_date"];
+
     
     return cellACtive;
 
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    self.idTable = [NSString stringWithFormat:@"%@",[self.idl objectAtIndex:indexPath.row]];
     
     [self performSegueWithIdentifier:@"detail" sender:self];
 
@@ -158,6 +240,20 @@
 -(void)addBtnActn:(UIButton *)sender {
     
     [self performSegueWithIdentifier:@"collection" sender:self];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    
+    DetailTable * seguesms;
+    if ([[segue identifier] isEqualToString:@"detail"]){
+        
+        seguesms = [segue destinationViewController];
+        seguesms.strID = self.idTable;
+        
+    }
 }
 
 @end

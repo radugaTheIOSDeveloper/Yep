@@ -30,7 +30,7 @@
         
         [UIView animateWithDuration:2.2 animations:^{
             CGRect newLogoFrame = self.logoImage.frame;
-            newLogoFrame.origin.y= 60.0f;
+            newLogoFrame.origin.y= 60.0f; 
             self.logoImage.frame=newLogoFrame;
             
         } completion:^(BOOL finished) {

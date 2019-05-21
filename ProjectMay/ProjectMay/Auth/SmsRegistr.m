@@ -103,10 +103,21 @@
                                   
                                   
                                   [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
+                                  
+                                  [[API apiManager]setExisting_user:[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"existing_user"]]];
+                                  
                                   NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                                   [userDefaults setObject:@"true" forKey:@"token"];
                                   
-                                  [self performSegueWithIdentifier:@"nextReg" sender:self];
+                                  
+                                  if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"Y"]) {
+                                      [self performSegueWithIdentifier:@"endReg" sender:self];
+
+                                  }else if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"N"]) {
+                                      [self performSegueWithIdentifier:@"nextReg" sender:self];
+
+                                  }
+                                  
 
         } onFailure:^(NSError *error, NSInteger statusCode) {
 

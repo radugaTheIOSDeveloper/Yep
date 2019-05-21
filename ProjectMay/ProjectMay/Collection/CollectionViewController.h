@@ -11,4 +11,9 @@
 @interface CollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectioView;
 
+//-(void) refreshView: (UIRefreshControl *) refresh;
+//@property (strong, nonatomic) UIRefreshControl * refreshControl;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+
+
 @end

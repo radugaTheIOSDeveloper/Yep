@@ -18,6 +18,13 @@
 NSInteger status;
 
 NSString * str;
+NSString * strSex;
+NSString * date;
+
+
+NSString * messageAlert;
+
+NSString * idCity;
 
 @implementation FinalRegistration
 
@@ -41,6 +48,7 @@ NSString * str;
     
     
     self.citys = [NSMutableArray array];
+    self.arrayIDCity = [NSMutableArray array];
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;
@@ -96,6 +104,50 @@ NSString * str;
     
 }
 
+#pragma mark API
+
+
+-(void) updateUser:(NSString *)birth_date
+              city:(NSString *)city
+               sex:(NSString *)sex
+              name:(NSString *)name{
+    
+    
+    [[API apiManager] updateUser:birth_date cityId:city sex:sex name:name
+     
+                       onSuccess:^(NSDictionary *responseObject) {
+                           
+                           [self.activityIndicator stopAnimating];
+                           self.activityIndicator.alpha = 0.f;
+                           [self.view setUserInteractionEnabled:YES];
+                           
+                           [self performSegueWithIdentifier:@"listViewController" sender:self];
+
+    }
+     
+                       onFailure:^(NSError *error, NSInteger statusCode) {
+       
+                           
+                           
+                           [self.activityIndicator stopAnimating];
+                           self.activityIndicator.alpha = 0.f;
+                           [self.view setUserInteractionEnabled:YES];
+                           
+                           NSString * errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+                           
+                           
+                           NSData *data = [errResponse dataUsingEncoding:NSUTF8StringEncoding];
+                           id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                           
+                           NSLog(@"erro: \n%@",json);
+                           messageAlert = [json objectForKey:@"message"];
+                           [self alerts];
+                           
+                           
+    }];
+
+    
+}
 
 -(void) getCiys {
     
@@ -104,7 +156,9 @@ NSString * str;
         self.activityIndicator.alpha = 0.f;
         [self.view setUserInteractionEnabled:YES];
         NSMutableArray * city = [responceObject valueForKey:@"name"];
+        NSMutableArray * iis = [responceObject valueForKey:@"id"];
         self.citys = city;
+        self.arrayIDCity = iis;
         NSLog(@"%@",city);
     } onFailure:^(NSError *error, NSInteger statusCode) {
         [self.activityIndicator stopAnimating];
@@ -113,6 +167,24 @@ NSString * str;
         NSLog(@"%@",error);
     }];
     
+}
+
+-(void) alerts{
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Ошибка регистрации!"
+                                 message:messageAlert
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
@@ -229,6 +301,7 @@ NSString * str;
             return [self.arrayCity objectAtIndex:row];
             
         }else{
+            
             return [self.citys objectAtIndex:row];
 
         }
@@ -249,8 +322,12 @@ NSString * str;
     if (status == 1) {
         
         if (self.citys.count == 0) {
+
             str = [self.arrayCity objectAtIndex:row];
         }else{
+            idCity = [self.arrayIDCity objectAtIndex:row];
+            NSLog(@"id == %@", idCity);
+
             str = [self.citys objectAtIndex:row];
 
         }
@@ -259,7 +336,8 @@ NSString * str;
         
        str = [arrayFloor objectAtIndex:row];
 
-        
+        strSex = [arrayFloor objectAtIndex:row];
+
     }
  
 
@@ -272,9 +350,29 @@ NSString * str;
 
 
 
+#pragma mark pressButrton
+
 - (IBAction)regBtn:(id)sender {
     
-    [self performSegueWithIdentifier:@"listViewController" sender:self];
+    [self.activityIndicator startAnimating];
+    self.activityIndicator.alpha = 1.f;
+    [self.view setUserInteractionEnabled:NO];
+
+    
+    NSString *strS = [[NSString alloc]init];
+    
+    if ([strSex isEqualToString:@"Женский"]) {
+        
+        strS = @"F";
+        
+    }else if([strSex isEqualToString:@"Мужской"]){
+        strS = @"M";
+    }
+    
+    
+    
+    [self updateUser:date city:idCity sex:strS name:_nameOtl.text];
+    
 
     
 }
@@ -323,20 +421,15 @@ NSString * str;
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"dd.MM.yyyy"];
         NSString *myDayString = [df stringFromDate:choise];
+        date = myDayString;
       //  NSLog(@"%@", myDayString);
         //NSString * date = [[NSString alloc]initWithFormat:@"%@", myDayString];
 
         self.dateLabel.text = myDayString;
     }
     
-
-    
-    
-    
     
 }
-
-
 
 - (IBAction)actName:(id)sender {
 }

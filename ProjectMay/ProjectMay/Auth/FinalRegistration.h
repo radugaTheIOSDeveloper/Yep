@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) NSMutableArray * arrayCity;
 @property (strong, nonatomic) NSMutableArray * arrayFloor;
+@property (strong, nonatomic) NSMutableArray * arrayIDCity;
 @property (weak, nonatomic)  UIDatePicker * pickerDateView;
 
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
