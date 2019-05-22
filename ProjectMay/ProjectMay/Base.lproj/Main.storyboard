@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XOY-9k-5uS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1519,20 +1519,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Ваши пожелания" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="BigEditText" translatesAutoresizingMaskIntoConstraints="NO" id="Eba-rn-ImM">
-                                <rect key="frame" x="20" y="278" width="336" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="336" id="Ke2-mY-ecF"/>
-                                    <constraint firstAttribute="height" constant="110" id="PKJ-bf-r0o"/>
-                                </constraints>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
-                                <connections>
-                                    <action selector="yourWish:" destination="n4R-EV-Jdi" eventType="touchDown" id="2qi-9t-k4F"/>
-                                    <outlet property="delegate" destination="n4R-EV-Jdi" id="hdg-Sd-KYo"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6i-Vg-LCk">
                                 <rect key="frame" x="20" y="553" width="335" height="57"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1561,6 +1547,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="580124727.05983901">
                                     <!--2019-05-21 09:45:27 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="ru"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zp-uf-F6B">
                                 <rect key="frame" x="150" y="396" width="74" height="30"/>
@@ -1569,6 +1556,28 @@
                                     <action selector="goodAct:" destination="n4R-EV-Jdi" eventType="touchUpInside" id="4Ae-vf-JJ4"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BigEditText" translatesAutoresizingMaskIntoConstraints="NO" id="nPB-mI-UC5">
+                                <rect key="frame" x="20" y="275" width="334" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="DT0-bO-1MF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="334" id="aZp-Q7-6ro"/>
+                                    <constraint firstAttribute="width" constant="334" id="fWb-ZQ-Khn"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Ваши пожелания" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eba-rn-ImM">
+                                <rect key="frame" x="43" y="286" width="288" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="Lfp-61-Hg3"/>
+                                    <constraint firstAttribute="width" constant="288" id="bLa-PV-QkK"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <action selector="yourWish:" destination="n4R-EV-Jdi" eventType="touchDown" id="2qi-9t-k4F"/>
+                                    <outlet property="delegate" destination="n4R-EV-Jdi" id="hdg-Sd-KYo"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1579,7 +1588,6 @@
                             <constraint firstItem="kaF-HW-h0A" firstAttribute="leading" secondItem="5U1-fk-M7K" secondAttribute="leading" id="HLA-Eq-m8R"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="top" secondItem="Aq3-lB-rrN" secondAttribute="top" id="HWL-OV-EVy"/>
                             <constraint firstItem="3iD-RG-YCF" firstAttribute="top" secondItem="J1B-s4-Vjl" secondAttribute="bottom" constant="8" id="IAx-CP-e7D"/>
-                            <constraint firstItem="Eba-rn-ImM" firstAttribute="top" secondItem="GVM-n6-nZt" secondAttribute="bottom" constant="19" id="IKb-TT-Syb"/>
                             <constraint firstItem="kXg-iK-1QP" firstAttribute="centerX" secondItem="5U1-fk-M7K" secondAttribute="centerX" id="Mwd-tn-lcm"/>
                             <constraint firstItem="5zp-uf-F6B" firstAttribute="centerX" secondItem="3iD-RG-YCF" secondAttribute="centerX" id="SwM-3P-VB3"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="bottom" secondItem="5U1-fk-M7K" secondAttribute="bottom" id="TBp-y4-IMj"/>
@@ -1588,14 +1596,18 @@
                             <constraint firstItem="GVM-n6-nZt" firstAttribute="top" secondItem="3iD-RG-YCF" secondAttribute="bottom" constant="19" id="W9B-TE-5Ei"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="leading" secondItem="J1B-s4-Vjl" secondAttribute="trailing" constant="-199.5" id="YiH-VX-H6k"/>
                             <constraint firstItem="K6i-Vg-LCk" firstAttribute="top" secondItem="FVv-fs-3fT" secondAttribute="bottom" constant="-114" id="aax-D6-N2d"/>
+                            <constraint firstItem="Eba-rn-ImM" firstAttribute="leading" secondItem="nPB-mI-UC5" secondAttribute="trailing" constant="-311" id="bcP-ey-vrM"/>
                             <constraint firstItem="Eba-rn-ImM" firstAttribute="centerX" secondItem="FVv-fs-3fT" secondAttribute="centerX" id="dWx-aT-ea1"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="trailing" secondItem="5U1-fk-M7K" secondAttribute="trailing" id="dab-4c-5xb"/>
                             <constraint firstItem="kaF-HW-h0A" firstAttribute="bottom" secondItem="5U1-fk-M7K" secondAttribute="bottom" id="eNg-HG-5ER"/>
+                            <constraint firstItem="nPB-mI-UC5" firstAttribute="top" secondItem="Eba-rn-ImM" secondAttribute="bottom" constant="-96" id="gYP-w3-0OY"/>
+                            <constraint firstItem="nPB-mI-UC5" firstAttribute="top" secondItem="kXg-iK-1QP" secondAttribute="bottom" constant="8" id="grG-oQ-UUF"/>
+                            <constraint firstItem="5zp-uf-F6B" firstAttribute="top" secondItem="nPB-mI-UC5" secondAttribute="bottom" constant="11" id="hAh-ML-1kt"/>
                             <constraint firstItem="kaF-HW-h0A" firstAttribute="trailing" secondItem="5U1-fk-M7K" secondAttribute="trailing" id="lLm-mH-Eju"/>
                             <constraint firstItem="GVM-n6-nZt" firstAttribute="top" secondItem="kXg-iK-1QP" secondAttribute="bottom" constant="-41" id="lNT-se-ZRg"/>
-                            <constraint firstItem="5zp-uf-F6B" firstAttribute="top" secondItem="Eba-rn-ImM" secondAttribute="bottom" constant="8" id="tVN-Ig-b5a"/>
                             <constraint firstItem="3iD-RG-YCF" firstAttribute="centerX" secondItem="FVv-fs-3fT" secondAttribute="centerX" id="uts-kn-2mW"/>
                             <constraint firstItem="K6i-Vg-LCk" firstAttribute="centerX" secondItem="FVv-fs-3fT" secondAttribute="centerX" id="wa3-eN-J4G"/>
+                            <constraint firstItem="nPB-mI-UC5" firstAttribute="centerX" secondItem="5U1-fk-M7K" secondAttribute="centerX" id="yv1-dj-vSe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5U1-fk-M7K"/>
                     </view>
@@ -1624,7 +1636,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="6932" y="1488"/>
+            <point key="canvasLocation" x="6932" y="1487.4062968515743"/>
         </scene>
         <!--Request Detail Good-->
         <scene sceneID="Y0n-Tf-UCz">
@@ -1834,6 +1846,7 @@
         <image name="Z4" width="199" height="95"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wvB-6h-2wF"/>
         <segue reference="WD5-F8-j9R"/>
         <segue reference="u04-KV-sgb"/>
         <segue reference="INs-gS-gYe"/>
