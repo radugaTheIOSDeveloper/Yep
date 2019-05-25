@@ -148,6 +148,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    if ([self.hotList count] == 0) {
+        return 600.f;
+    }else{
+        return 80.f;
+    }
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView: (UITableView *) tableView{
     return 1;
 }
@@ -155,7 +168,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
   
+    NSLog(@"%ld", [self.hotList count]);
+
+    if ([self.hotList count] == 0) {
+        return 1;
+    }else{
         return [self.hotList count];
+    }
     
 }
 
@@ -163,23 +182,22 @@
     
     
     static NSString * ideCell = @"activeCell";
-
-    
-//    if (arrImg.count == 0) {
-//
-//        UITableViewCell * cellACtive = [tableView dequeueReusableCellWithIdentifier:ideCellNull];
-//        self.tableView.scrollEnabled = NO;
-//        self.tableView.allowsSelection = NO;
-//        self.tableView.backgroundColor = [UIColor clearColor];
-//
-//
-//        return cellACtive;
-    
-//    }else{
-    
+    static NSString * idecellnull = @"cellnull";
 
     
     
+    if ([self.hotList count] == 0) {
+
+        UITableViewCell * cellnull = [tableView dequeueReusableCellWithIdentifier:idecellnull];
+        self.tableView.scrollEnabled = NO;
+        self.tableView.allowsSelection = NO;
+        self.tableView.backgroundColor = [UIColor clearColor];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+        return cellnull;
+    
+    }else{
+
     
         self.tableView.scrollEnabled = YES;
         self.tableView.allowsSelection = YES;
@@ -206,17 +224,9 @@
 
     }
     
-
-    
-            imageTwo.image = [UIImage imageNamed:@"NextHotImg"];
-            nameSam.textColor = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
-            detail.textColor = [UIColor lightGrayColor];
-            
-   
-    
-        
-        
-        
+        imageTwo.image = [UIImage imageNamed:@"NextHotImg"];
+        nameSam.textColor = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
+        detail.textColor = [UIColor lightGrayColor];
         nameSam.text = [hot objectForKey:@"name"];
         detail.text = [self.short_desc objectAtIndex:indexPath.row];
         date.text = @"10:08";
@@ -225,6 +235,8 @@
     
     return cellACtive;
 
+    }
+        return NULL;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

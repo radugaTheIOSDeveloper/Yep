@@ -180,7 +180,6 @@
     NSLog(@"%@",[self getToken]);
     
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
-    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     [self.sessionManager POST:@"bids/"
                    parameters:params
                      progress:nil
@@ -303,7 +302,6 @@
     
     
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
-    [self.sessionManager.requestSerializer setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     [self.sessionManager POST:@"updateUser/"
                   parameters:params
                     progress:nil
@@ -328,8 +326,39 @@
                         
 }
 
+#pragma mark accept_bid
 
-
-
+-(void)accept_bids:(NSString *)bid_id
+         onSuccess:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
+    
+    
+    NSDictionary * params = [NSDictionary dictionaryWithObjectsAndKeys:
+                             bid_id, @"id",
+                             @"1", @"accept_bid",
+                             nil];
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    [self.sessionManager POST:@"bids/"
+                   parameters:params
+                     progress:nil
+                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                          
+                          if(success){
+                              success(responseObject);
+                              NSLog(@"responce object %@",responseObject);
+                          }
+                      }
+                      failure:^(NSURLSessionTask *operation, NSError *error) {
+                          NSLog(@"error%@",operation);
+                          
+                          
+                          
+                          if(failure){
+                              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                              failure(error, response.statusCode);
+                          }
+                      }];
+    
+}
 
 @end

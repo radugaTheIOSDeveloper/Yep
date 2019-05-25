@@ -10,6 +10,7 @@
 #import "API.h"
 
 @interface DetailTable ()
+@property (strong, nonatomic) NSString * messageAlert;
 
 @end
 
@@ -48,21 +49,18 @@
         self.activityIndicator.alpha = 0.f;
         [self.view setUserInteractionEnabled:YES];
         
-        NSLog(@"%@",responceObject);
+        NSLog(@"detail = %@",responceObject);
         
 
         NSDictionary * arr = [responceObject objectForKey:@"offer_place"];
-        NSLog(@"%@", [arr objectForKey:@"id"]);
+        NSDictionary * arrcat = [arr objectForKey:@"category"];
         
-        
-            self.name.text = [arr objectForKey:@"name"];
-            self.description_detail.text = [arr objectForKey:@"description"];
-            self.address.text = [arr objectForKey:@"address"];
-        
-     
-
-//
+        self.name.text = [arr objectForKey:@"name"];
+        self.description_detail.text = [arr objectForKey:@"description"];
+        self.address.text = [arr objectForKey:@"address"];
         self.offer_text.text = [responceObject objectForKey:@"offer_text"];
+        self.labelCategory.text =[arrcat objectForKey:@"cat_name"];
+
         
     } onFailure:^(NSError *error, NSInteger statusCode) {
         
@@ -71,6 +69,7 @@
         self.activityIndicator.alpha = 0.f;
         [self.view setUserInteractionEnabled:YES];
         
+        [self alerts];
     }];
     
 }
@@ -92,19 +91,59 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) alerts{
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Ошибка загруки"
+                                 message:@""
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
-*/
 
 - (IBAction)backTable:(id)sender {
     
     [self performSegueWithIdentifier:@"backTable" sender:self];
 
+}
+
+
+#pragma mark bidAccept
+
+-(void) accept_bids:(NSString *)bid_id{
+    
+    [[API apiManager] accept_bids:bid_id onSuccess:^(NSDictionary *responseObject) {
+        [self.activityIndicator stopAnimating];
+        self.activityIndicator.alpha = 0.f;
+        [self.view setUserInteractionEnabled:YES];
+        
+        NSLog(@"%@",self.strID);
+        
+        [self performSegueWithIdentifier:@"goodDetail" sender:self];
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        [self.activityIndicator stopAnimating];
+        self.activityIndicator.alpha = 0.f;
+        [self.view setUserInteractionEnabled:YES];
+        [self alerts];
+    }];
+    
+}
+
+- (IBAction)actAccept:(id)sender {
+    
+    [self.activityIndicator startAnimating];
+    self.activityIndicator.alpha = 1.f;
+    [self.view setUserInteractionEnabled:NO];
+    
+    [self accept_bids:self.strID];
+    
 }
 @end

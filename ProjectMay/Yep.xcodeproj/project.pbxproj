@@ -11,6 +11,8 @@
 		CE205ADB2278BA0D007CBD90 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE205ADA2278BA0D007CBD90 /* ListViewController.m */; };
 		CE205ADF2278C2B5007CBD90 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE205ADE2278C2B5007CBD90 /* CollectionViewController.m */; };
 		CE5B43A62277102000E5642B /* SmsRegistr.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5B43A52277102000E5642B /* SmsRegistr.m */; };
+		CE5BEA03229943C400B88F3F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEA02229943C400B88F3F /* LoginViewController.m */; };
+		CE5BEA06229943D800B88F3F /* SMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEA05229943D800B88F3F /* SMSViewController.m */; };
 		CE6E25C4228AFA6C00E5DAC4 /* libKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6E25C5228AFA6C00E5DAC4 /* libKeychainItemWrapper.a */; };
 		CE8724E7227659A00088A449 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8724E6227659A00088A449 /* PageContentViewController.m */; };
 		CE8724EA22765A720088A449 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8724E922765A720088A449 /* RootViewController.m */; };
@@ -63,6 +65,10 @@
 		CE205ADE2278C2B5007CBD90 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		CE5B43A42277102000E5642B /* SmsRegistr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmsRegistr.h; sourceTree = "<group>"; };
 		CE5B43A52277102000E5642B /* SmsRegistr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmsRegistr.m; sourceTree = "<group>"; };
+		CE5BEA01229943C400B88F3F /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CE5BEA02229943C400B88F3F /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CE5BEA04229943D800B88F3F /* SMSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
+		CE5BEA05229943D800B88F3F /* SMSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
 		CE6E25C5228AFA6C00E5DAC4 /* libKeychainItemWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKeychainItemWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8724E5227659A00088A449 /* PageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		CE8724E6227659A00088A449 /* PageContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
@@ -192,6 +198,10 @@
 				CE5B43A52277102000E5642B /* SmsRegistr.m */,
 				CE205AD5227864E9007CBD90 /* FinalRegistration.h */,
 				CE205AD6227864E9007CBD90 /* FinalRegistration.m */,
+				CE5BEA01229943C400B88F3F /* LoginViewController.h */,
+				CE5BEA02229943C400B88F3F /* LoginViewController.m */,
+				CE5BEA04229943D800B88F3F /* SMSViewController.h */,
+				CE5BEA05229943D800B88F3F /* SMSViewController.m */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -495,6 +505,7 @@
 				CE8724EE227679CF0088A449 /* AuthViewController.m in Sources */,
 				CECEE66A2275BFCE004A4A34 /* ViewController.m in Sources */,
 				CE205ADB2278BA0D007CBD90 /* ListViewController.m in Sources */,
+				CE5BEA03229943C400B88F3F /* LoginViewController.m in Sources */,
 				CE8724EA22765A720088A449 /* RootViewController.m in Sources */,
 				CE205AD7227864E9007CBD90 /* FinalRegistration.m in Sources */,
 				CE9DBB52228005CC006FC181 /* Menu.m in Sources */,
@@ -507,6 +518,7 @@
 				CE9DBB44227FCFED006FC181 /* NextDetail.m in Sources */,
 				CE9DBB5822801317006FC181 /* ListHistory.m in Sources */,
 				CE9846BE227B02B500EB4051 /* CollectionViewCell.m in Sources */,
+				CE5BEA06229943D800B88F3F /* SMSViewController.m in Sources */,
 				CE8724E7227659A00088A449 /* PageContentViewController.m in Sources */,
 				CE9DBB4B227FFCD0006FC181 /* DetailTable.m in Sources */,
 				CEB94FA22288310200284829 /* API.m in Sources */,

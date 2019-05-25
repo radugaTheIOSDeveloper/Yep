@@ -20,6 +20,7 @@
 
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
+- (IBAction)au:(id)sender;
 
 - (IBAction)nextBtn:(id)sender;
 - (IBAction)phoneAct:(id)sender;

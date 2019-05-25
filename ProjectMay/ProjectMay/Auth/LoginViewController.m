@@ -1,22 +1,22 @@
 //
-//  AuthViewController.m
-//  ProjectMay
+//  LoginViewController.m
+//  Yep
 //
-//  Created by User on 29.04.2019.
+//  Created by User on 25.05.2019.
 //  Copyright © 2019 freshtech. All rights reserved.
 //
 
-#import "AuthViewController.h"
-#import "API.h"
-#import "SmsRegistr.h"
 #import "LoginViewController.h"
-@interface AuthViewController ()
+#import "SMSViewController.h"
+#import "API.h"
+#import "AuthViewController.h"
+@interface LoginViewController ()
 
 @property (strong, nonatomic) NSString * messageAlert;
 
 @end
 
-@implementation AuthViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,60 +29,17 @@
     [self.view addSubview:self.activityIndicator];
     self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
     self.activityIndicator.color = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
-    [self.view setUserInteractionEnabled:YES];
-    
-}
+    [self.view setUserInteractionEnabled:YES];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-#pragma mark API
-
-
-
--(void) onetimePass:(NSString *)numTel{
-
-    [[API apiManager]onetimePass:numTel
-                              onSuccess:^(NSDictionary *responseObject) {
-
-                                  [self.activityIndicator stopAnimating];
-                                  self.activityIndicator.alpha = 0.f;
-
-                                  [self.view setUserInteractionEnabled:YES];
-
-                                  [self performSegueWithIdentifier:@"sms" sender:self];
-
-
-                              }  onFailure:^(NSError *error, NSInteger statusCode) {
-
-                                  [self.activityIndicator stopAnimating];
-                                  self.activityIndicator.alpha = 0.f;
-
-                                  [self.view setUserInteractionEnabled:YES];
-                                
-                                  
-                                  NSString * errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
-                                  
-                       
-                                  NSData *data = [errResponse dataUsingEncoding:NSUTF8StringEncoding];
-                                  id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                  
-                                  NSLog(@"%@",[json objectForKey:@"message"]);
-                                  
-                                  
-                                  self.messageAlert = [json objectForKey:@"message"];
-                                  [self alerts];
-                              }];
-}
-
-
 -(void) alerts{
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Ошибка регистрации!"
+                                 alertControllerWithTitle:@"Ошибка авторизации!"
                                  message:self.messageAlert
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction
@@ -97,12 +54,12 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-#pragma mark TextField and Keyboard
+
+
 
 -(void) dismissKeyboard{
     
-    [self.phoneTextOutlet resignFirstResponder];
-    [self.nameTextOutlet resignFirstResponder];
+    [self.phoneNumber resignFirstResponder];
 }
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
@@ -120,7 +77,7 @@
 
 - (BOOL) textFieldShouldClear:(UITextField *)textField{
     
-    if ([textField isEqual:self.phoneTextOutlet]) {
+    if ([textField isEqual:self.phoneNumber]) {
         textField.text = @"+7";
     } else {
         textField.text = @"";
@@ -132,40 +89,79 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    if ([textField isEqual:self.phoneTextOutlet]) {
-        [self.nameTextOutlet becomeFirstResponder];
-
-    } else {
+    if ([textField isEqual:self.phoneNumber]) {
         [self.view setUserInteractionEnabled:NO];
         
-        NSMutableString *stringRange = [self.phoneTextOutlet.text mutableCopy];
+        NSMutableString *stringRange = [self.phoneNumber.text mutableCopy];
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
         [self.activityIndicator startAnimating];
         self.activityIndicator.alpha = 1.f;
-        [self onetimePass:stringRange];
-        
-    
-    }
+        //    [self onetimePass:stringRange];
+    } 
     return YES;
 }
 
 
 
 
-- (IBAction)au:(id)sender {
-    [self performSegueWithIdentifier:@"authd" sender:self];
+
+-(void) onetimePass:(NSString *)numTel{
+    
+    [[API apiManager]onetimePass:numTel
+                       onSuccess:^(NSDictionary *responseObject) {
+                           
+                           [self.activityIndicator stopAnimating];
+                           self.activityIndicator.alpha = 0.f;
+                           
+                           [self.view setUserInteractionEnabled:YES];
+                           
+                           [self performSegueWithIdentifier:@"smsAuth" sender:self];
+                           
+                           
+                       }  onFailure:^(NSError *error, NSInteger statusCode) {
+                           
+                           [self.activityIndicator stopAnimating];
+                           self.activityIndicator.alpha = 0.f;
+                           
+                           [self.view setUserInteractionEnabled:YES];
+                           
+                           
+                           NSString * errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+                           
+                           
+                           NSData *data = [errResponse dataUsingEncoding:NSUTF8StringEncoding];
+                           id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                           
+                           NSLog(@"%@",[json objectForKey:@"message"]);
+                           
+                           
+                           self.messageAlert = [json objectForKey:@"message"];
+                           [self alerts];
+                       }];
+}
+
+
+- (IBAction)actPhoneNumber:(id)sender {
+    self.phoneNumber.text = @"+7";
+
+}
+- (IBAction)actReg:(id)sender {
+    [self performSegueWithIdentifier:@"regs" sender:self];
 
 }
 
-- (IBAction)nextBtn:(id)sender {
+- (IBAction)actNext:(id)sender {
     
-    if ([self.phoneTextOutlet.text isEqualToString:@""]) {
+    
+    
+    
+    if ([self.phoneNumber.text isEqualToString:@""]) {
         
         self.messageAlert = @"Введите номер телефона";
         [self alerts];
     }else{
-        NSMutableString *stringRange = [self.phoneTextOutlet.text mutableCopy];
+        NSMutableString *stringRange = [self.phoneNumber.text mutableCopy];
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
         self.activityIndicator.alpha = 1.f;
@@ -175,35 +171,28 @@
     }
     
 
-
 }
 
-- (IBAction)phoneAct:(id)sender {
-    self.phoneTextOutlet.text = @"+7";
 
-}
-
-- (IBAction)nameAct:(id)sender {
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
 
     
-    SmsRegistr * seguesms;
-    LoginViewController * lvc;
-    if ([[segue identifier] isEqualToString:@"sms"]){
+    SMSViewController * seguesms;
+    AuthViewController * auvc;
+    if ([[segue identifier] isEqualToString:@"smsAuth"]){
         
-        NSMutableString *stringRange = [self.phoneTextOutlet.text mutableCopy];
+        NSMutableString *stringRange = [self.phoneNumber.text mutableCopy];
         NSRange range = NSMakeRange(0, 1);
         [stringRange deleteCharactersInRange:range];
         seguesms = [segue destinationViewController];
         seguesms.phoneNumber = stringRange;
-
-    }else if ([[segue identifier] isEqualToString:@"authd"]){
-        lvc = [segue destinationViewController];
-
+        
+    }else if ([[segue identifier] isEqualToString:@"regs"]){
+        auvc = [segue destinationViewController];
     }
     
 }
+
+
 @end
