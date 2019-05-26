@@ -36,17 +36,18 @@
             
         } completion:^(BOOL finished) {
             
-            [self performSegueWithIdentifier:@"instruction" sender:self];
 
-//            if ([_tokenStatus isEqualToString:@"true"]) {
-//                [self performSegueWithIdentifier:@"goodapp" sender:self];
+            if ([_tokenStatus isEqualToString:@"true"]) {
+                [self performSegueWithIdentifier:@"goodapp" sender:self];
+            }else{
+                [self performSegueWithIdentifier:@"instruction" sender:self];
+
+            }
+            
 //            }else if([_tokenStatus isEqualToString:@"false"]){
 //                [self performSegueWithIdentifier:@"loginfull" sender:self];
-//            }else{
-//                [self performSegueWithIdentifier:@"instruction" sender:self];
-//
 //            }
-            
+                
         }];
     }];
     
