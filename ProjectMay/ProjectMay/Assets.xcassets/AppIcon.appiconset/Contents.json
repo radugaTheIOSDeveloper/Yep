@@ -33,7 +33,7 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "иконка-для-ios — копия.png",
+      "filename" : "iconapp120px.png",
       "scale" : "2x"
     },
     {
@@ -89,7 +89,7 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "иконка-для-ios-1.png",
+      "filename" : "iconapp1024.png",
       "scale" : "1x"
     }
   ],
