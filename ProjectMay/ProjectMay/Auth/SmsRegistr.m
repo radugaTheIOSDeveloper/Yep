@@ -100,14 +100,30 @@
                                   [self.activityIndicator stopAnimating];
                                   self.activityIndicator.alpha = 0.f;
                                   
-                                  
-                                  
+                                  NSLog(@"%@",responseObject);
+
+
                                   [[API apiManager]setToken:[NSString stringWithFormat:@"Token %@",[responseObject objectForKey:@"token"]]];
                                   
                                   [[API apiManager]setExisting_user:[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"existing_user"]]];
                                   
                                   NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                                   [userDefaults setObject:@"true" forKey:@"token"];
+                                  
+                                  if([responseObject objectForKey:@"user_info"] != NULL || [[responseObject objectForKey:@"user_info"] isEqualToString:@""]){
+                                      
+                                      NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                                      NSMutableArray * arruser = [NSMutableArray array];
+                                      arruser = [responseObject objectForKey:@"user_info"];
+                                      NSDictionary * hot = [arruser objectAtIndex:0];
+                                      
+                                      [userDefaults setObject:[hot objectForKey:@"city"] forKey:@"city"];
+                                      [userDefaults setObject:[hot objectForKey:@"date_of_birth"] forKey:@"birth_date"];
+                                      [userDefaults setObject:[hot objectForKey:@"name"] forKey:@"name"];
+                                      [userDefaults setObject:[hot objectForKey:@"sex"] forKey:@"sex"];
+                                      
+                        
+                                  }
                                   
                                   
                                   if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"Y"]) {

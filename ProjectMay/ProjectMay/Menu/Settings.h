@@ -8,33 +8,33 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Settings : UIViewController <UITextFieldDelegate>
+@interface Settings : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 //property outlet
 @property (weak, nonatomic) IBOutlet UILabel *name;
-
-@property (weak, nonatomic) IBOutlet UILabel *mail;
-
-@property (weak, nonatomic) IBOutlet UILabel *age;
-@property (weak, nonatomic) IBOutlet UILabel *fllor;
-
 @property (weak, nonatomic) IBOutlet UILabel *sity;
-@property (weak, nonatomic) IBOutlet UITextField *textName;
-@property (weak, nonatomic) IBOutlet UITextField *textMail;
-@property (weak, nonatomic) IBOutlet UIButton *ageBtn;
-@property (weak, nonatomic) IBOutlet UIButton *sityBtn;
-@property (weak, nonatomic) IBOutlet UIButton *menOtl;
-@property (weak, nonatomic) IBOutlet UIButton *woomenOtl;
 
-//property action
-- (IBAction)nameTextAct:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextOtl;
 
-- (IBAction)mailTextAction:(id)sender;
-- (IBAction)men:(id)sender;
-- (IBAction)woomen:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *dateSettings;
+@property (weak, nonatomic) IBOutlet UILabel *citySettings;
 
-- (IBAction)ageAct:(id)sender;
-- (IBAction)cityAct:(id)sender;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePickerSettings;
+@property (weak, nonatomic) IBOutlet UIButton *goodBtnOtl;
+
+- (IBAction)goodSettings:(id)sender;
+- (IBAction)nameActText:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnSettings;
+
+- (IBAction)actBtnSettings:(id)sender;
+
+@property (strong, nonatomic) NSMutableArray * arrayMaleSettings;
+@property (strong, nonatomic) NSMutableArray * arrayIDCitySettings;
+@property (strong, nonatomic) NSMutableArray * arrayCitySettings;
+
+
+@property (weak, nonatomic) IBOutlet UIPickerView *cityPickerSettings;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 
 @end

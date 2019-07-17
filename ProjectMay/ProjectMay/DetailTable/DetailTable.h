@@ -11,9 +11,15 @@
 @interface DetailTable : UIViewController
 
 - (IBAction)backTable:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageDetail;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageType;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *labelCategory;
 @property (strong, nonatomic) NSString * strID;
+@property (strong, nonatomic) NSString * imageName;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *address;

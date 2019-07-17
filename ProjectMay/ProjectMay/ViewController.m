@@ -39,7 +39,9 @@
 
             if ([_tokenStatus isEqualToString:@"true"]) {
                 [self performSegueWithIdentifier:@"goodapp" sender:self];
-            }else{
+            }else if ([_tokenStatus isEqualToString:@"login"]){
+                [self performSegueWithIdentifier:@"login" sender:self];
+            }else {
                 [self performSegueWithIdentifier:@"instruction" sender:self];
 
             }

@@ -121,6 +121,14 @@ NSString * idCity;
                            self.activityIndicator.alpha = 0.f;
                            [self.view setUserInteractionEnabled:YES];
                            
+                           
+                           NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                           [userDefaults setObject:birth_date forKey:@"birth_date"];
+                           [userDefaults setObject:self.sityLabel.text forKey:@"city"];
+                           [userDefaults setObject:sex forKey:@"sex"];
+                           [userDefaults setObject:name forKey:@"name"];
+                           
+                           
                            [self performSegueWithIdentifier:@"listViewController" sender:self];
 
     }
@@ -334,8 +342,7 @@ NSString * idCity;
         
     }else if (status == 2){
         
-       str = [arrayFloor objectAtIndex:row];
-
+        str = [arrayFloor objectAtIndex:row];
         strSex = [arrayFloor objectAtIndex:row];
 
     }
@@ -368,7 +375,6 @@ NSString * idCity;
     }else if([strSex isEqualToString:@"Мужской"]){
         strS = @"M";
     }
-    
     
     
     [self updateUser:date city:idCity sex:strS name:_nameOtl.text];

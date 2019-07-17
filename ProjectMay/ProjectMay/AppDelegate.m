@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
+@import Firebase;
+@import UserNotifications;
+@import FirebaseInstanceID;
 
-@interface AppDelegate ()
-
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 @end
 
 @implementation AppDelegate
@@ -21,10 +23,21 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = [UIColor clearColor];
+    [FIRApp configure];
+ 
+    
     
     return YES;
 }
 
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSLog(@"APNs device token retrieved: %@", deviceToken);
+    
+    // With swizzling disabled you must set the APNs device token here.
+    // [FIRMessaging messaging].APNSToken = deviceToken;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

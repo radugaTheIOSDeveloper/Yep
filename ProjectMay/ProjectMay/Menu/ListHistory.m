@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+
     arrImg = @[@"Z2",@"Z2",@"Z2",@"Z2",@"Z2"];
 
 }

@@ -7,6 +7,7 @@
 //
 
 #import "Menu.h"
+#import "API.h"
 
 @interface Menu ()
 {
@@ -27,12 +28,32 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationItem.hidesBackButton = YES;
-//
+
+
+    
     self.navigationItem.title = @"YEP";
 //
 
     [self backButton];
+
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     
+    NSLog(@"%@",[userDefaults objectForKey:@"city"]);
+
+    
+    
+    if ([[userDefaults objectForKey:@"sex"] isEqualToString:@"F"]) {
+
+        self.iconMale.image = [UIImage imageNamed:@"female"];
+
+    } else if ([[userDefaults objectForKey:@"sex"] isEqualToString:@"M"]){
+        self.iconMale.image = [UIImage imageNamed:@"male"];
+    } else{
+        self.iconMale.image = [UIImage imageNamed:@"male"];
+    }
+
+    self.nameMenu.text = [userDefaults objectForKey:@"name"];
+    self.cityMenu.text = [userDefaults objectForKey:@"city"];
     
     menuItems = @[@"list", @"settings", @"friend",@"share",@"exit"];
 
@@ -57,25 +78,60 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+
     return cell;
 }
 
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-    destViewController.title = [[menuItems objectAtIndex:indexPath.row] capitalizedString];
-    
 
+    NSString * strrow = [menuItems objectAtIndex:indexPath.row];
+
+    if ([strrow isEqualToString:@"list"]) {
+        destViewController.title = [@"Архив заявок" capitalizedString];
+    }else if ([strrow isEqualToString:@"settings"]){
+        destViewController.title = [@"Настройки" capitalizedString];
+
+    }else if ([strrow isEqualToString:@"share"]){
+        [self actSocial];
+
+    } else if ([strrow isEqualToString:@"exit"]){
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:@"login" forKey:@"token"];
+        [[API apiManager]setToken:NULL];
+    }
+   // destViewController.title = [[menuItems objectAtIndex:indexPath.row] capitalizedString];
+
+}
+
+
+
+- (void) actSocial {
+    
+    NSString * message = @"Тестовый текс тестовый текст \n ntcrcnjds fasf";
+    
+    UIImage * image = [UIImage imageNamed:@"social"];
+    
+    NSArray * shareItems = @[message, image];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    [self presentViewController:avc animated:YES completion:nil];
+    
 }
 
 -(void) backButton {
     
     UIBarButtonItem * btn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"CloseBtn"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
     self.navigationItem.rightBarButtonItem = btn;
-    
+    self.navigationController.navigationBar.tintColor = [UIColor purpleColor];
+
     
 }
 
@@ -96,5 +152,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

@@ -70,4 +70,10 @@
 -(void) accept_bids:(NSString *)bid_id
           onSuccess:(void(^)(NSDictionary * responseObject)) success
           onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
+
+-(void) cancel_bid:(NSString *)bid_id
+          onSuccess:(void(^)(NSDictionary * responseObject)) success
+          onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
+
 @end

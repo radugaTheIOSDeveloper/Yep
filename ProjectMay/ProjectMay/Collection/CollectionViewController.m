@@ -118,6 +118,22 @@
     CollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:ideActive forIndexPath:indexPath];
     
     self.collectioView.scrollEnabled = YES;
+    NSString * url_img = [NSString stringWithFormat:@"http://188.227.18.52:8000%@",[self.cat_image objectAtIndex:indexPath.row]];
+        
+    NSURL *imagePostURL = [NSURL URLWithString:url_img];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:imagePostURL];
+    
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        UIImage *postImage = [UIImage  imageWithData:data];
+        
+        CGFloat widthScale = 50.f / postImage.size.width;
+        CGFloat heightScale = 50.f / postImage.size.height;
+        
+        cell.iconCollectional.transform = CGAffineTransformMakeScale(widthScale, heightScale);
+        cell.iconCollectional.image = postImage;
+        [cell setNeedsLayout];
+    }];
     
     cell.collectionImages.image = [UIImage imageNamed:@"Collection"];
     cell.collectionsLabel.text = [self.cat_name objectAtIndex:indexPath.row];

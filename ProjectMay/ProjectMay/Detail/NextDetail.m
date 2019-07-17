@@ -26,6 +26,8 @@
     
     self.navigationItem.hidesBackButton = YES;
 
+    self.datePicker.backgroundColor = [UIColor whiteColor];
+    
     NSLog(@"%@",_idCat);
 
     

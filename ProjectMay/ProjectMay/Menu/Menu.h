@@ -11,4 +11,8 @@
 @interface Menu : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconMale;
+@property (weak, nonatomic) IBOutlet UILabel *nameMenu;
+@property (weak, nonatomic) IBOutlet UILabel *cityMenu;
+
 @end

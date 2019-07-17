@@ -20,10 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
+
+
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;
     [self.view addSubview:self.activityIndicator];
@@ -38,7 +41,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.backBarButtonItem = nil;
+     self.navigationItem.leftBarButtonItem = nil;
+}
 #pragma mark API
 
 

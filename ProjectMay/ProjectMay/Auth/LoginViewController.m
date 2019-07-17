@@ -23,6 +23,12 @@
     
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
+    
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.backBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = nil;
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;

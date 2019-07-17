@@ -26,6 +26,8 @@
 
 @property (strong, nonatomic) NSString  * idTable;
 
+@property (strong, nonatomic) NSString  * stringTypes;
+
 
 
 @end
@@ -46,7 +48,7 @@
 
 
     
-    
+    NSLog(@"%@", [[API apiManager]getToken]);
     
     self.addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.addBtn.frame = CGRectMake(self.view.frame.size.width/2 -50 , self.view.frame.size.height/2 + 220, 100, 100);
@@ -55,7 +57,7 @@
     [self.addBtn setBackgroundImage:[UIImage imageNamed:@"AddButton"] forState:UIControlStateNormal];
     [self.view addSubview:self.addBtn];
     
-    
+
     if (arrImg == 0) {
     
         self.tableView.alpha = 0;
@@ -116,6 +118,8 @@
     [[API apiManager] bidsList:^(NSDictionary *responceObject) {
         
         [self stopActivityIndicator];
+        [self.refreshControl endRefreshing];
+
         NSLog(@"%@",responceObject);
         NSMutableArray * active = [responceObject valueForKey:@"offer_place"];
         self.hotList = active;
@@ -130,6 +134,7 @@
         self.offer_type = offer_type;
 
         NSLog(@"%ld, %ld" ,[self.hotList count], [self.short_desc  count]);
+        
         
         [self.tableView reloadData];
         
@@ -189,8 +194,8 @@
     if ([self.hotList count] == 0) {
 
         UITableViewCell * cellnull = [tableView dequeueReusableCellWithIdentifier:idecellnull];
-        self.tableView.scrollEnabled = NO;
-        self.tableView.allowsSelection = NO;
+        self.tableView.scrollEnabled = YES;
+       // self.tableView.allowsSelection = YES;
         self.tableView.backgroundColor = [UIColor clearColor];
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
@@ -201,8 +206,8 @@
     
         self.tableView.scrollEnabled = YES;
         self.tableView.allowsSelection = YES;
-        self.tableView.backgroundColor = [UIColor whiteColor];
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+     //   self.tableView.backgroundColor = [UIColor whiteColor];
+      //  self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         UITableViewCell * cellACtive = [tableView dequeueReusableCellWithIdentifier:ideCell];
         UIImageView * image = (UIImageView *)[cellACtive.contentView viewWithTag:10];
         UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
@@ -219,8 +224,11 @@
 
     if ([stsr isEqualToString:@"1"]) {
         image.image = [UIImage imageNamed:@"Z1"];
+        self.stringTypes = @"Z1";
     }else{
         image.image = [UIImage imageNamed:@"Z2"];
+        self.stringTypes = @"Z2";
+
 
     }
     
@@ -231,8 +239,6 @@
         detail.text = [self.short_desc objectAtIndex:indexPath.row];
         date.text = @"10:08";
         
-
-    
     return cellACtive;
 
     }
@@ -264,6 +270,7 @@
         
         seguesms = [segue destinationViewController];
         seguesms.strID = self.idTable;
+        seguesms.imageName = self.stringTypes;
         
     }
 }
