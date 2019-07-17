@@ -1637,14 +1637,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundCollection" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-fs-3fT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафе/ресторан" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1B-s4-Vjl">
-                                <rect key="frame" x="16" y="68" width="184" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Кафе/ресторан" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1B-s4-Vjl">
+                                <rect key="frame" x="17" y="78" width="184" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iD-RG-YCF">
-                                <rect key="frame" x="16" y="105" width="343" height="102"/>
+                                <rect key="frame" x="16" y="115" width="343" height="92"/>
                                 <string key="text">UIViewController is a generic controller base class that manages a view.  It has methods that are called when a view appears or disappears.
  </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1713,6 +1713,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FVv-fs-3fT" firstAttribute="top" secondItem="J1B-s4-Vjl" secondAttribute="bottom" constant="-107" id="1q2-hd-sia"/>
                             <constraint firstItem="GVM-n6-nZt" firstAttribute="top" secondItem="Aq3-lB-rrN" secondAttribute="top" constant="226" id="5pf-d7-7G6"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="leading" secondItem="5U1-fk-M7K" secondAttribute="leading" id="5rD-MV-bRC"/>
                             <constraint firstItem="3iD-RG-YCF" firstAttribute="leading" secondItem="5U1-fk-M7K" secondAttribute="leading" constant="16" id="6BC-AC-3w1"/>
@@ -1723,7 +1724,6 @@
                             <constraint firstItem="kXg-iK-1QP" firstAttribute="centerX" secondItem="5U1-fk-M7K" secondAttribute="centerX" id="Mwd-tn-lcm"/>
                             <constraint firstAttribute="bottom" secondItem="FVv-fs-3fT" secondAttribute="bottom" id="PeM-S0-UO9"/>
                             <constraint firstItem="5zp-uf-F6B" firstAttribute="centerX" secondItem="3iD-RG-YCF" secondAttribute="centerX" id="SwM-3P-VB3"/>
-                            <constraint firstItem="FVv-fs-3fT" firstAttribute="top" secondItem="J1B-s4-Vjl" secondAttribute="bottom" constant="-97" id="TmX-5d-aIw"/>
                             <constraint firstItem="GVM-n6-nZt" firstAttribute="top" secondItem="3iD-RG-YCF" secondAttribute="bottom" constant="19" id="W9B-TE-5Ei"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="leading" secondItem="J1B-s4-Vjl" secondAttribute="trailing" constant="-199.5" id="YiH-VX-H6k"/>
                             <constraint firstItem="K6i-Vg-LCk" firstAttribute="top" secondItem="FVv-fs-3fT" secondAttribute="bottom" constant="-114" id="aax-D6-N2d"/>
@@ -2051,6 +2051,7 @@
         <image name="social" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wvB-6h-2wF"/>
         <segue reference="lIC-W3-t1R"/>
         <segue reference="WD5-F8-j9R"/>
         <segue reference="u04-KV-sgb"/>
