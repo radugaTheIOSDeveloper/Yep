@@ -7,11 +7,8 @@
 //
 
 #import "AppDelegate.h"
-@import Firebase;
-@import UserNotifications;
-@import FirebaseInstanceID;
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate>
+@interface AppDelegate ()
 @end
 
 @implementation AppDelegate
@@ -23,7 +20,6 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = [UIColor clearColor];
-    [FIRApp configure];
  
     
     
