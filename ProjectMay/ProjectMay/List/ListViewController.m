@@ -53,7 +53,7 @@
     NSLog(@"%@", [[API apiManager]getToken]);
     
     self.addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.addBtn.frame = CGRectMake(self.view.frame.size.width/2 -50 , self.view.frame.size.height/2 + 220, 100, 100);
+    self.addBtn.frame = CGRectMake(self.view.frame.size.width/2 -50 , self.view.frame.size.height/2 + 120, 100, 100);
     [self.addBtn addTarget:self action:@selector(addBtnActn:) forControlEvents:UIControlEventTouchUpInside];
     [self.addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.addBtn setBackgroundImage:[UIImage imageNamed:@"AddButton"] forState:UIControlStateNormal];

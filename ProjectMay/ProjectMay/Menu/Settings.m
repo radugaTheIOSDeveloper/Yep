@@ -330,6 +330,7 @@ NSString * idCitySettings;
     self.nameTextOtl.textColor = [UIColor darkGrayColor];
     
     [UIView animateWithDuration:1.0 animations:^{
+        self.goodBtnOtl.alpha =0.f;
         self.datePickerSettings.alpha = 0.0f;
         self.cityPickerSettings.alpha = 0.0f;
     } completion:^(BOOL finished) {

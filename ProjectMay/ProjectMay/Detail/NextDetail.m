@@ -143,6 +143,15 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)yourWish:(id)sender {
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        self.good.alpha = 0.f;
+        self.datePicker.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        
+        
+    }];
+    
 }
 
 - (IBAction)nextBtn:(id)sender {
