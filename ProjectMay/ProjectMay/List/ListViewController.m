@@ -45,6 +45,8 @@
     self.short_desc = [NSMutableArray array];
     self.offer_type = [NSMutableArray array];
     self.idl = [NSMutableArray array];
+    
+
 
 
     

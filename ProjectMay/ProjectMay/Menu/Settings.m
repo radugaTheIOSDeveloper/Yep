@@ -28,7 +28,12 @@ NSString * idCitySettings;
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationItem.hidesBackButton = YES;
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
 
+    
+    
     [self backButton];
     
     self.arrayCitySettings = [NSMutableArray array];
@@ -46,9 +51,15 @@ NSString * idCitySettings;
     
     
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    self.nameTextOtl.placeholder = [userDefaults objectForKey:@"name"];
+    self.nameTextOtl.text = [userDefaults objectForKey:@"name"];
     self.citySettings.text = [userDefaults objectForKey:@"city"];
     self.dateSettings.text = [userDefaults objectForKey:@"birth_date"];
+    
+    
+    self.nameTextOtl.textColor = [UIColor lightGrayColor];
+    self.citySettings.textColor = [UIColor lightGrayColor];
+    self.dateSettings.textColor = [UIColor lightGrayColor];
+
     
     NSLog(@"%@",[userDefaults objectForKey:@"birth_date"]);
     
@@ -152,12 +163,18 @@ NSString * idCitySettings;
 }
 
 - (void)didTapLabelWithGesturesityLabel:(UITapGestureRecognizer *)tapGesture {
+    [self dismissKeyboard];
+    
+    self.dateSettings.textColor = [UIColor darkGrayColor];
 
     statusSettings = 1;
-    
     self.btnSettings.alpha = 0.f;
     self.goodBtnOtl.alpha = 1.f;
     
+    
+    self.datePickerSettings.alpha = 0.0f;
+    self.cityPickerSettings.alpha = 0.0f;
+
     [UIView animateWithDuration:1.0 animations:^{
         self.datePickerSettings.alpha = 1.0f;
     } completion:^(BOOL finished) {
@@ -169,8 +186,12 @@ NSString * idCitySettings;
 
 
 - (void)didTapLabelWithGesturedateLabel:(UITapGestureRecognizer *)tapGesture {
-    
+    [self dismissKeyboard];
+
     statusSettings = 2;
+    
+    self.citySettings.textColor = [UIColor darkGrayColor];
+
     
     self.cityPickerSettings.alpha = 1.f;
     self.btnSettings.alpha = 0.f;
@@ -178,7 +199,8 @@ NSString * idCitySettings;
     
     [self.cityPickerSettings reloadAllComponents];
     self.cityPickerSettings.alpha = 0.0f;
-    
+    self.datePickerSettings.alpha = 0.0f;
+
     [UIView animateWithDuration:1.0 animations:^{
         self.cityPickerSettings.alpha = 1.0f;
     } completion:^(BOOL finished) {
@@ -305,6 +327,18 @@ NSString * idCitySettings;
 }
 
 - (IBAction)nameActText:(id)sender {
+    self.nameTextOtl.textColor = [UIColor darkGrayColor];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        self.datePickerSettings.alpha = 0.0f;
+        self.cityPickerSettings.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        
+        
+    }];
+
+
+    
 }
 - (IBAction)actBtnSettings:(id)sender {
     

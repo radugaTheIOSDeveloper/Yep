@@ -27,10 +27,18 @@
     
 //    imgCollection = @[@"Collection",@"Collection",@"Collection",@"Collection",@"Collection",@"Collection",@"Collection"];
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationItem.hidesBackButton = YES;
+    [self backButton];
+    
     _cat_name = [NSMutableArray array];
     _cat_id = [NSMutableArray array];
     _cat_image = [NSMutableArray array];
-
+    
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;
     [self.view addSubview:self.activityIndicator];
@@ -81,6 +89,19 @@
     
     
 }
+
+
+-(void) backButton {
+    
+    UIBarButtonItem * btn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"BackWhite"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
+    self.navigationItem.leftBarButtonItem = btn;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+}
+- (void)backTapped:(id)sender {
+    [self performSegueWithIdentifier:@"backColl" sender:self];
+}
+
 
 -(void) alerts{
     

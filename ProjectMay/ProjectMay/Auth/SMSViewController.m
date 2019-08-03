@@ -56,7 +56,7 @@
 -(void) alerts{
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Ошибка регистрации!"
+                                 alertControllerWithTitle:@"Ошибка авторизации!"
                                  message:self.messageAlert
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction
@@ -108,28 +108,21 @@
                                   NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                                   [userDefaults setObject:@"true" forKey:@"token"];
                                   
-                                  if([responseObject objectForKey:@"user_info"] != NULL || [[responseObject objectForKey:@"user_info"] isEqualToString:@""]){
-                                      
+                                  
+                                  if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"Y"]) {
                                       NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                                       NSMutableArray * arruser = [NSMutableArray array];
                                       arruser = [responseObject objectForKey:@"user_info"];
                                       NSDictionary * hot = [arruser objectAtIndex:0];
                                       
-                                        [userDefaults setObject:[hot objectForKey:@"city"] forKey:@"city"];
+                                      [userDefaults setObject:[hot objectForKey:@"city"] forKey:@"city"];
                                       [userDefaults setObject:[hot objectForKey:@"date_of_birth"] forKey:@"birth_date"];
                                       [userDefaults setObject:[hot objectForKey:@"name"] forKey:@"name"];
                                       [userDefaults setObject:[hot objectForKey:@"sex"] forKey:@"sex"];
-
-
-                                    
-                                      
-                                  }
-                                  
-                                  
-                                  if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"Y"]) {
                                       [self performSegueWithIdentifier:@"loginfull" sender:self];
                                       
                                   }else if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"N"]) {
+                                      
                                       [self performSegueWithIdentifier:@"loginno" sender:self];
                                       
                                   }

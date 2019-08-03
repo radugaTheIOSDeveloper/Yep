@@ -8,6 +8,8 @@
 
 #import "Menu.h"
 #import "API.h"
+#import <Social/Social.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface Menu ()
 {
@@ -32,6 +34,11 @@
 
     
     self.navigationItem.title = @"YEP";
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor blackColor],
+       NSFontAttributeName:[UIFont fontWithName:@"AmaticSC-Bold" size:34]}];
+    
 //
 
     [self backButton];
@@ -123,6 +130,9 @@
     UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
     
     [self presentViewController:avc animated:YES completion:nil];
+    
+    
+
     
 }
 

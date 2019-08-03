@@ -10,6 +10,8 @@
 		CE205AD7227864E9007CBD90 /* FinalRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = CE205AD6227864E9007CBD90 /* FinalRegistration.m */; };
 		CE205ADB2278BA0D007CBD90 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE205ADA2278BA0D007CBD90 /* ListViewController.m */; };
 		CE205ADF2278C2B5007CBD90 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE205ADE2278C2B5007CBD90 /* CollectionViewController.m */; };
+		CE206A1522F5B4B5003251FA /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE206A1322F5B4B4003251FA /* AmaticSC-Regular.ttf */; };
+		CE206A1622F5B4B5003251FA /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE206A1422F5B4B5003251FA /* AmaticSC-Bold.ttf */; };
 		CE5B43A62277102000E5642B /* SmsRegistr.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5B43A52277102000E5642B /* SmsRegistr.m */; };
 		CE5BEA03229943C400B88F3F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEA02229943C400B88F3F /* LoginViewController.m */; };
 		CE5BEA06229943D800B88F3F /* SMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEA05229943D800B88F3F /* SMSViewController.m */; };
@@ -65,14 +67,19 @@
 		CE205ADA2278BA0D007CBD90 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		CE205ADD2278C2B5007CBD90 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		CE205ADE2278C2B5007CBD90 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		CE206A1322F5B4B4003251FA /* AmaticSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AmaticSC-Regular.ttf"; path = "../../amaticsc/AmaticSC-Regular.ttf"; sourceTree = "<group>"; };
+		CE206A1422F5B4B5003251FA /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AmaticSC-Bold.ttf"; path = "../../amaticsc/AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
 		CE5B43A42277102000E5642B /* SmsRegistr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmsRegistr.h; sourceTree = "<group>"; };
 		CE5B43A52277102000E5642B /* SmsRegistr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmsRegistr.m; sourceTree = "<group>"; };
 		CE5BEA01229943C400B88F3F /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CE5BEA02229943C400B88F3F /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CE5BEA04229943D800B88F3F /* SMSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
 		CE5BEA05229943D800B88F3F /* SMSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
+		CE632F9922F58FB90006621B /* CRO35.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO35.otf; path = ../../../Design/CRO35.otf; sourceTree = "<group>"; };
+		CE632F9A22F58FB90006621B /* CRO65.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO65.otf; path = ../../../Design/CRO65.otf; sourceTree = "<group>"; };
+		CE632F9B22F58FB90006621B /* CRO55.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO55.otf; path = ../../../Design/CRO55.otf; sourceTree = "<group>"; };
+		CE632F9C22F58FB90006621B /* CRO75.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO75.otf; path = ../../../Design/CRO75.otf; sourceTree = "<group>"; };
 		CE6E25C5228AFA6C00E5DAC4 /* libKeychainItemWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKeychainItemWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE73382022DCA0B100044D32 /* ofont.ru_Amatic SC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ofont.ru_Amatic SC.ttf"; path = "../../ofont.ru_Amatic SC.ttf"; sourceTree = "<group>"; };
 		CE73382122DCDEA800044D32 /* SocialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		CE73382222DCDEA800044D32 /* SocialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		CE73382622DCE83300044D32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -184,6 +191,17 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		CE632F9822F58F9A0006621B /* f */ = {
+			isa = PBXGroup;
+			children = (
+				CE632F9922F58FB90006621B /* CRO35.otf */,
+				CE632F9B22F58FB90006621B /* CRO55.otf */,
+				CE632F9A22F58FB90006621B /* CRO65.otf */,
+				CE632F9C22F58FB90006621B /* CRO75.otf */,
+			);
+			path = f;
+			sourceTree = "<group>";
+		};
 		CE8724E4227625B00088A449 /* Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +301,7 @@
 		CECEE6642275BFCE004A4A34 /* ProjectMay */ = {
 			isa = PBXGroup;
 			children = (
-				CE73382022DCA0B100044D32 /* ofont.ru_Amatic SC.ttf */,
+				CE632F9822F58F9A0006621B /* f */,
 				CEB94F9F2288308200284829 /* API */,
 				CE9DBB4F228005BB006FC181 /* Menu */,
 				CE9DBB48227FFCBD006FC181 /* DetailTable */,
@@ -298,6 +316,8 @@
 				CECEE6692275BFCE004A4A34 /* ViewController.m */,
 				CECEE66B2275BFCE004A4A34 /* Main.storyboard */,
 				CECEE66E2275BFCE004A4A34 /* Assets.xcassets */,
+				CE206A1422F5B4B5003251FA /* AmaticSC-Bold.ttf */,
+				CE206A1322F5B4B4003251FA /* AmaticSC-Regular.ttf */,
 				CECEE6702275BFCE004A4A34 /* LaunchScreen.storyboard */,
 				CECEE6732275BFCE004A4A34 /* Info.plist */,
 				CE73382622DCE83300044D32 /* GoogleService-Info.plist */,
@@ -433,9 +453,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE206A1522F5B4B5003251FA /* AmaticSC-Regular.ttf in Resources */,
 				CECEE6722275BFCE004A4A34 /* LaunchScreen.storyboard in Resources */,
 				CE73382722DCE83400044D32 /* GoogleService-Info.plist in Resources */,
 				CECEE66F2275BFCE004A4A34 /* Assets.xcassets in Resources */,
+				CE206A1622F5B4B5003251FA /* AmaticSC-Bold.ttf in Resources */,
 				CECEE66D2275BFCE004A4A34 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

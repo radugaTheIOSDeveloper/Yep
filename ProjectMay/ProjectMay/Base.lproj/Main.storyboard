@@ -10,6 +10,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CRO55.otf">
+            <string>CirceRounded-Regular</string>
+        </array>
+        <array key="CRO65.otf">
+            <string>CirceRounded-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -102,7 +110,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fd-YG-UjG">
                                 <rect key="frame" x="278" y="619" width="81" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="13"/>
                                 <state key="normal" title="Регистрация">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +162,7 @@
                                             <constraint firstAttribute="height" constant="50" id="mvm-zL-fuo"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="go"/>
                                         <connections>
                                             <action selector="phoneAct:" destination="ba1-A1-3hq" eventType="touchDown" id="QRg-Da-dGE"/>
@@ -167,7 +175,8 @@
                                             <constraint firstAttribute="height" constant="57" id="Hou-Sj-XMj"/>
                                             <constraint firstAttribute="width" constant="336" id="LOv-d1-P1i"/>
                                         </constraints>
-                                        <state key="normal" image="NextBtn"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
+                                        <state key="normal" title="Далее" backgroundImage="NextBtn"/>
                                         <connections>
                                             <action selector="nextBtn:" destination="ba1-A1-3hq" eventType="touchUpInside" id="DGg-OC-QnH"/>
                                         </connections>
@@ -178,19 +187,19 @@
                                             <constraint firstAttribute="height" constant="56" id="KxW-JB-fXu"/>
                                             <constraint firstAttribute="width" constant="232" id="euj-o0-BJP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас уже есть аккаунт?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWn-cq-gpF">
-                                        <rect key="frame" x="127" y="444" width="121.66666666666669" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <rect key="frame" x="115.33333333333333" y="444" width="144.33333333333337" height="18"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phI-NA-9id">
-                                        <rect key="frame" x="167" y="464" width="41" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="162.66666666666666" y="470" width="50" height="35"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -258,7 +267,8 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6S-Wa-Jo2">
                                         <rect key="frame" x="20" y="608" width="335" height="57"/>
-                                        <state key="normal" image="NextBtn"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
+                                        <state key="normal" title="Далее" backgroundImage="NextBtn"/>
                                         <connections>
                                             <action selector="nextBtn:" destination="mEt-Ch-iP9" eventType="touchUpInside" id="siL-uj-jHB"/>
                                         </connections>
@@ -270,7 +280,7 @@
                                             <constraint firstAttribute="height" constant="50" id="F5V-vD-Mq0"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
                                         <connections>
                                             <action selector="smsAct:" destination="mEt-Ch-iP9" eventType="touchDown" id="cjq-fH-mdH"/>
@@ -283,7 +293,7 @@
                                             <constraint firstAttribute="width" constant="232" id="GU1-ch-Put"/>
                                             <constraint firstAttribute="height" constant="56" id="luH-Pv-rkH"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -346,7 +356,7 @@
                                     <constraint firstAttribute="height" constant="50" id="p4f-85-wd8"/>
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <connections>
                                     <action selector="actName:" destination="HJJ-es-Qtl" eventType="touchDown" id="zGf-SM-1Yw"/>
@@ -369,8 +379,9 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls4-Za-aLb">
-                                <rect key="frame" x="20" y="650" width="335" height="57"/>
-                                <state key="normal" image="NextBtn"/>
+                                <rect key="frame" x="20.333333333333343" y="650" width="335" height="57"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
+                                <state key="normal" title="Зарегистрироваться" backgroundImage="NextBtn"/>
                                 <connections>
                                     <action selector="regBtn:" destination="HJJ-es-Qtl" eventType="touchUpInside" id="Z49-zI-IM1"/>
                                 </connections>
@@ -395,7 +406,7 @@
                                     <constraint firstAttribute="height" constant="50" id="NSK-E4-1Sj"/>
                                     <constraint firstAttribute="width" constant="319" id="dCZ-M4-vsV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="19"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -412,7 +423,7 @@
                                     <constraint firstAttribute="width" constant="319" id="cSz-c3-JCh"/>
                                     <constraint firstAttribute="height" constant="50" id="kTV-Sr-3Xv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -422,7 +433,7 @@
                                     <constraint firstAttribute="width" constant="319" id="C9K-cA-9bf"/>
                                     <constraint firstAttribute="height" constant="50" id="KEN-1v-lMJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -443,7 +454,7 @@
                                     <constraint firstAttribute="height" constant="56" id="1ZD-Kb-HOa"/>
                                     <constraint firstAttribute="width" constant="232" id="kP0-KT-BzK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -510,7 +521,11 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AmaticSC-Regular" family="Amatic SC" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="AmaticSC-Bold" family="Amatic SC" pointSize="34"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -533,14 +548,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="social" translatesAutoresizingMaskIntoConstraints="NO" id="BTV-Tl-ia7">
-                                <rect key="frame" x="87.666666666666686" y="74" width="200" height="200"/>
+                                <rect key="frame" x="87.666666666666686" y="118" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="luJ-V5-uBI"/>
                                     <constraint firstAttribute="height" constant="200" id="xRL-T9-EWQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расскажите о нас в социальных сетях" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBV-cG-0Zw">
-                                <rect key="frame" x="35" y="282" width="305.66666666666669" height="41"/>
+                                <rect key="frame" x="35" y="326" width="305.66666666666669" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="AfZ-WM-Z1r"/>
                                 </constraints>
@@ -549,7 +564,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JZ-3b-Msk">
-                                <rect key="frame" x="117" y="331" width="140" height="40"/>
+                                <rect key="frame" x="117" y="375" width="140" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Поделиться" backgroundImage="BtnBlue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -592,7 +607,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пригласить друга" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezY-QU-bvq">
-                                <rect key="frame" x="115.99999999999999" y="153" width="143.66666666666663" height="21"/>
+                                <rect key="frame" x="115.99999999999999" y="197" width="143.66666666666663" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -637,14 +652,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IA-XQ-9TQ">
-                                                    <rect key="frame" x="68" y="17" width="39.666666666666657" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="68" y="17" width="40.333333333333343" height="22"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwC-KV-q7c">
-                                                    <rect key="frame" x="68" y="41" width="33" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <rect key="frame" x="68" y="43" width="40.333333333333343" height="22"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -660,7 +675,7 @@
                                                         <constraint firstAttribute="width" constant="94" id="kWE-g5-5JM"/>
                                                         <constraint firstAttribute="height" constant="21" id="rua-c1-lIc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -738,8 +753,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Архив заявок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ei3-St-1Kr">
-                                                    <rect key="frame" x="45" y="17" width="134" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <rect key="frame" x="44.999999999999993" y="17" width="120.33333333333331" height="25.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -747,8 +762,8 @@
                                                     <rect key="frame" x="15" y="20" width="22" height="19"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ5-8y-0TM">
-                                                    <rect key="frame" x="340" y="20" width="20" height="19.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="343.33333333333331" y="20" width="16.666666666666686" height="19.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -778,8 +793,8 @@
                                                     <rect key="frame" x="15" y="18" width="22" height="22"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqw-Xw-dmq">
-                                                    <rect key="frame" x="45.000000000000007" y="17" width="108.66666666666669" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <rect key="frame" x="44.999999999999993" y="17" width="98.333333333333314" height="25.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -807,8 +822,8 @@
                                                     <rect key="frame" x="15" y="17" width="24" height="24"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставить отзыв" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKr-Km-yMZ">
-                                                    <rect key="frame" x="47" y="17" width="157" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <rect key="frame" x="47" y="17" width="140.66666666666666" height="25.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -840,8 +855,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расшарить приложение" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gos-z6-Al0">
-                                                    <rect key="frame" x="46.999999999999986" y="19" width="238.66666666666663" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <rect key="frame" x="47" y="19" width="211" height="25.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -873,8 +888,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выйти" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBv-FJ-ome">
-                                                    <rect key="frame" x="47" y="19" width="63.666666666666657" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <rect key="frame" x="47" y="19" width="57.666666666666657" height="25.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -898,22 +913,22 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Константин " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxS-xd-hMw">
-                                <rect key="frame" x="74" y="68" width="105" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="74" y="112" width="109.33333333333331" height="25.666666666666657"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male" translatesAutoresizingMaskIntoConstraints="NO" id="LnM-w0-Lg1">
-                                <rect key="frame" x="16" y="68" width="50" height="55"/>
+                                <rect key="frame" x="16" y="112" width="50" height="55"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Москва" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ib-8q-Tnq">
-                                <rect key="frame" x="90" y="97" width="54.666666666666657" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="90" y="145.66666666666666" width="50.666666666666657" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="15"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconMenuMap" translatesAutoresizingMaskIntoConstraints="NO" id="zS5-Oc-cvB">
-                                <rect key="frame" x="74" y="100" width="8" height="12"/>
+                                <rect key="frame" x="74" y="148.66666666666666" width="8" height="12"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -965,14 +980,14 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDx-5K-gEZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="moR-Sm-lay">
-                                        <rect key="frame" x="21" y="108" width="332" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="whiteEditText" translatesAutoresizingMaskIntoConstraints="NO" id="moR-Sm-lay">
+                                        <rect key="frame" x="21" y="152" width="332" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="332" id="7Gv-b1-Zm3"/>
                                             <constraint firstAttribute="height" constant="50" id="gfF-XF-UXz"/>
                                         </constraints>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="nameActText:" destination="yWK-3a-sTq" eventType="touchDown" id="47P-cd-bhv"/>
@@ -980,13 +995,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата Рождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pm2-iz-K0d">
-                                        <rect key="frame" x="21" y="166" width="131" height="21"/>
+                                        <rect key="frame" x="21" y="210" width="131" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-fe-KvU">
-                                        <rect key="frame" x="21" y="79" width="36" height="21"/>
+                                        <rect key="frame" x="21" y="123" width="36" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1001,23 +1016,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBj-Ht-qTM">
-                                        <rect key="frame" x="21" y="584" width="333" height="50"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <state key="normal" title="Приянть" backgroundImage="EditText">
+                                        <rect key="frame" x="20.333333333333343" y="584" width="335" height="57"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="19"/>
+                                        <state key="normal" title="Приянть" backgroundImage="NextBtn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="actBtnSettings:" destination="yWK-3a-sTq" eventType="touchUpInside" id="B2E-Gq-oZ6"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="u3e-wf-2lH">
-                                        <rect key="frame" x="21" y="195" width="333" height="50"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteEditText" translatesAutoresizingMaskIntoConstraints="NO" id="u3e-wf-2lH">
+                                        <rect key="frame" x="21" y="239" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9fs-89-MBE"/>
                                             <constraint firstAttribute="width" constant="333" id="sOX-I6-w4k"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EditText" translatesAutoresizingMaskIntoConstraints="NO" id="yZt-d1-fLN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteEditText" translatesAutoresizingMaskIntoConstraints="NO" id="yZt-d1-fLN">
                                         <rect key="frame" x="21" y="363.66666666666669" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ZGS-K9-XqB"/>
@@ -1025,13 +1040,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAZ-HS-1pQ">
-                                        <rect key="frame" x="21" y="195" width="333" height="50"/>
+                                        <rect key="frame" x="21" y="239" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="333" id="knc-oP-FpF"/>
                                             <constraint firstAttribute="height" constant="50" id="vqR-1c-itn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3R-WT-yLg">
@@ -1040,12 +1055,12 @@
                                             <constraint firstAttribute="height" constant="50" id="k2q-tM-dSp"/>
                                             <constraint firstAttribute="width" constant="332" id="pHw-gV-YEn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="72Q-67-cYJ">
-                                        <rect key="frame" x="0.0" y="562" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="562" width="376.33333333333331" height="216"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <date key="date" timeIntervalSinceReferenceDate="578839461.23453796">
                                             <!--2019-05-06 12:44:21 +0000-->
@@ -1063,7 +1078,7 @@
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymy-xE-wRc">
-                                        <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="458" width="376.33333333333331" height="216"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pickerView>
                                 </subviews>
@@ -1161,14 +1176,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE5-YF-ZJ4">
-                                                    <rect key="frame" x="68" y="17" width="39.666666666666657" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="68" y="17" width="40.333333333333343" height="22"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVV-zr-jTb">
-                                                    <rect key="frame" x="68" y="41" width="33" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <rect key="frame" x="68" y="43" width="31" height="16.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1184,7 +1199,7 @@
                                                         <constraint firstAttribute="width" constant="94" id="Ryt-xp-I0t"/>
                                                         <constraint firstAttribute="height" constant="21" id="qp5-pw-wZE"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1282,39 +1297,39 @@
                                 <rect key="frame" x="0.0" y="441" width="375" height="387"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JO0-jB-43e">
-                                <rect key="frame" x="46" y="178" width="53.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="46" y="178" width="51" height="23"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Предложение для вас" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn7-nO-3S1">
-                                <rect key="frame" x="16" y="495" width="189" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="16" y="493" width="175.33333333333334" height="23"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Действует до 18.08.1877" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffG-su-4jK">
-                                <rect key="frame" x="41" y="524" width="176" height="17"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <rect key="frame" x="41" y="524" width="173.33333333333334" height="20.666666666666629"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hr-RA-Yto">
-                                <rect key="frame" x="16" y="549" width="343" height="170"/>
+                                <rect key="frame" x="16" y="552.66666666666663" width="343" height="166.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Как принято считать, действия представителей оппозиции лишь добавляют фракционных разногласий и заблокированы в рамках своих собственных рациональных ограничений. Противоположная точка зрения подразумевает, что акционеры крупнейших компаний, превозмогая сложившуюся непростую экономическую ситуацию, ограничены исключительно образом мышления. </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZT-2o-040">
-                                <rect key="frame" x="16" y="205" width="343" height="128"/>
+                                <rect key="frame" x="16" y="207" width="343" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="KVk-FH-DWi"/>
                                 </constraints>
                                 <string key="text">Ясность нашей позиции очевидна: постоянный количественный рост и сфера нашей активности прекрасно подходит для реализации распределения внутренних резервов и ресурсов. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconClock" translatesAutoresizingMaskIntoConstraints="NO" id="0z3-ZJ-NGE">
@@ -1322,7 +1337,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4V-Z7-8o6">
                                 <rect key="frame" x="16" y="728" width="140" height="40"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
                                 <state key="normal" title="Отклонить" backgroundImage="BtnWhite">
                                     <color key="titleColor" red="0.42352941179999998" green="0.76862745099999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1332,7 +1347,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXz-oS-nWp">
                                 <rect key="frame" x="219" y="727" width="140" height="40"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
                                 <state key="normal" title="Принять" backgroundImage="BtnBlue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1341,8 +1356,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPS-dv-Ykb">
-                                <rect key="frame" x="21" y="107.66666666666667" width="47" height="21.333333333333329"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <rect key="frame" x="21" y="106" width="43" height="23"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1350,8 +1365,8 @@
                                 <rect key="frame" x="16" y="175" width="16" height="24"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="фыафыаыфа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adn-zm-D5o">
-                                <rect key="frame" x="21" y="129" width="94" height="19.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="21" y="129" width="85.333333333333329" height="20.666666666666657"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1503,7 +1518,17 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6ei-pj-aDp">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.54509803921568623" green="0.18823529411764706" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="eUL-YN-7UZ" kind="relationship" relationship="rootViewController" id="xy3-Sk-TmJ"/>
@@ -1511,7 +1536,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTd-S6-CO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5526" y="1448"/>
+            <point key="canvasLocation" x="5476" y="1448"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="Z3f-c9-Sjr">
@@ -1522,7 +1547,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundCollection" translatesAutoresizingMaskIntoConstraints="NO" id="plT-FD-ShX">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hHp-mB-4jd">
                                 <rect key="frame" x="0.0" y="152" width="375" height="626"/>
@@ -1546,9 +1571,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJu-Cc-qQS">
-                                                    <rect key="frame" x="54.666666666666657" y="87" width="42" height="20.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="55.666666666666657" y="87" width="40.333333333333343" height="22"/>
+                                                    <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HnU-Pb-Hcj">
@@ -1584,21 +1609,21 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберете категорию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euW-Qx-8BD">
-                                <rect key="frame" x="16" y="106" width="198" height="24"/>
+                                <rect key="frame" x="16" y="106" width="226" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="CN3-RL-sO1"/>
-                                    <constraint firstAttribute="width" constant="198" id="wvu-zC-75N"/>
+                                    <constraint firstAttribute="width" constant="226" id="lTK-5a-b6n"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="plT-FD-ShX" firstAttribute="top" secondItem="qtR-dQ-tSM" secondAttribute="top" id="01O-DF-myZ"/>
                             <constraint firstItem="plT-FD-ShX" firstAttribute="trailing" secondItem="qtR-dQ-tSM" secondAttribute="trailing" id="52P-dS-ubS"/>
                             <constraint firstItem="euW-Qx-8BD" firstAttribute="leading" secondItem="qtR-dQ-tSM" secondAttribute="leading" constant="16" id="EvR-dD-0yb"/>
+                            <constraint firstItem="plT-FD-ShX" firstAttribute="top" secondItem="4wI-QY-Jn6" secondAttribute="top" id="MuL-pi-tT1"/>
                             <constraint firstItem="hHp-mB-4jd" firstAttribute="leading" secondItem="qtR-dQ-tSM" secondAttribute="leading" id="fQg-BA-IsN"/>
                             <constraint firstItem="hHp-mB-4jd" firstAttribute="trailing" secondItem="qtR-dQ-tSM" secondAttribute="trailing" id="fjT-UM-UpY"/>
                             <constraint firstItem="hHp-mB-4jd" firstAttribute="bottom" secondItem="qtR-dQ-tSM" secondAttribute="bottom" id="gw0-IX-UsQ"/>
@@ -1611,20 +1636,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="6wW-Q6-uwp">
                         <barButtonItem key="leftBarButtonItem" image="Back" id="Tol-QI-GFr">
-                            <color key="tintColor" red="0.42352941176470588" green="0.76862745098039209" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="XOY-9k-5uS" kind="show" id="ZTJ-rz-9oN"/>
-                            </connections>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectioView" destination="hHp-mB-4jd" id="DgN-xJ-Bm9"/>
                         <segue destination="n4R-EV-Jdi" kind="show" identifier="selectedCollectionViewCell" id="H9A-Or-02P"/>
+                        <segue destination="XOY-9k-5uS" kind="show" identifier="backColl" id="Eiz-0S-xwn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31z-L3-B1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6232.8000000000002" y="1447.536945812808"/>
+            <point key="canvasLocation" x="6231" y="1475"/>
         </scene>
         <!--Next Detail-->
         <scene sceneID="30P-Ng-KRZ">
@@ -1637,9 +1660,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundCollection" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-fs-3fT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Кафе/ресторан" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1B-s4-Vjl">
-                                <rect key="frame" x="17" y="78" width="184" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафе/ресторан" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1B-s4-Vjl">
+                                <rect key="frame" x="17" y="63" width="273" height="44"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1647,14 +1670,14 @@
                                 <rect key="frame" x="16" y="115" width="343" height="92"/>
                                 <string key="text">UIViewController is a generic controller base class that manages a view.  It has methods that are called when a view appears or disappears.
  </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6i-Vg-LCk">
                                 <rect key="frame" x="20" y="698" width="335" height="57"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" image="NextBtn"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
+                                <state key="normal" title="Отправить" backgroundImage="NextBtn"/>
                                 <connections>
                                     <action selector="nextBtn:" destination="n4R-EV-Jdi" eventType="touchUpInside" id="uko-nn-vf3"/>
                                 </connections>
@@ -1663,13 +1686,13 @@
                                 <rect key="frame" x="20" y="217" width="334" height="50"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата Заказа" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVM-n6-nZt">
-                                <rect key="frame" x="47.666666666666657" y="226" width="280" height="33"/>
+                                <rect key="frame" x="48" y="226" width="280" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="KgX-f0-o7q"/>
                                     <constraint firstAttribute="width" constant="280" id="mwf-HE-fzo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1703,7 +1726,7 @@
                                     <constraint firstAttribute="width" constant="288" id="bLa-PV-QkK"/>
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <connections>
                                     <action selector="yourWish:" destination="n4R-EV-Jdi" eventType="touchDown" id="2qi-9t-k4F"/>
@@ -1713,9 +1736,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="J1B-s4-Vjl" firstAttribute="leading" secondItem="5U1-fk-M7K" secondAttribute="leading" constant="17" id="1Jb-VE-GKE"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="top" secondItem="J1B-s4-Vjl" secondAttribute="bottom" constant="-107" id="1q2-hd-sia"/>
                             <constraint firstItem="GVM-n6-nZt" firstAttribute="top" secondItem="Aq3-lB-rrN" secondAttribute="top" constant="226" id="5pf-d7-7G6"/>
-                            <constraint firstItem="FVv-fs-3fT" firstAttribute="leading" secondItem="5U1-fk-M7K" secondAttribute="leading" id="5rD-MV-bRC"/>
                             <constraint firstItem="3iD-RG-YCF" firstAttribute="leading" secondItem="5U1-fk-M7K" secondAttribute="leading" constant="16" id="6BC-AC-3w1"/>
                             <constraint firstItem="5U1-fk-M7K" firstAttribute="trailing" secondItem="3iD-RG-YCF" secondAttribute="trailing" constant="16" id="8FI-VC-2UJ"/>
                             <constraint firstItem="kaF-HW-h0A" firstAttribute="leading" secondItem="5U1-fk-M7K" secondAttribute="leading" id="HLA-Eq-m8R"/>
@@ -1725,8 +1748,8 @@
                             <constraint firstAttribute="bottom" secondItem="FVv-fs-3fT" secondAttribute="bottom" id="PeM-S0-UO9"/>
                             <constraint firstItem="5zp-uf-F6B" firstAttribute="centerX" secondItem="3iD-RG-YCF" secondAttribute="centerX" id="SwM-3P-VB3"/>
                             <constraint firstItem="GVM-n6-nZt" firstAttribute="top" secondItem="3iD-RG-YCF" secondAttribute="bottom" constant="19" id="W9B-TE-5Ei"/>
-                            <constraint firstItem="FVv-fs-3fT" firstAttribute="leading" secondItem="J1B-s4-Vjl" secondAttribute="trailing" constant="-199.5" id="YiH-VX-H6k"/>
                             <constraint firstItem="K6i-Vg-LCk" firstAttribute="top" secondItem="FVv-fs-3fT" secondAttribute="bottom" constant="-114" id="aax-D6-N2d"/>
+                            <constraint firstItem="5U1-fk-M7K" firstAttribute="trailing" secondItem="J1B-s4-Vjl" secondAttribute="trailing" constant="85" id="bKS-nj-oMB"/>
                             <constraint firstItem="Eba-rn-ImM" firstAttribute="leading" secondItem="nPB-mI-UC5" secondAttribute="trailing" constant="-311" id="bcP-ey-vrM"/>
                             <constraint firstItem="Eba-rn-ImM" firstAttribute="centerX" secondItem="FVv-fs-3fT" secondAttribute="centerX" id="dWx-aT-ea1"/>
                             <constraint firstItem="FVv-fs-3fT" firstAttribute="trailing" secondItem="5U1-fk-M7K" secondAttribute="trailing" id="dab-4c-5xb"/>
@@ -1844,7 +1867,7 @@
                                             <constraint firstAttribute="height" constant="50" id="oin-DS-819"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="go"/>
                                         <connections>
                                             <action selector="actPhoneNumber:" destination="D12-zg-E7V" eventType="touchDown" id="g64-FI-KLQ"/>
@@ -1857,7 +1880,8 @@
                                             <constraint firstAttribute="width" constant="336" id="eoc-v8-hYw"/>
                                             <constraint firstAttribute="height" constant="57" id="qKv-ri-3kO"/>
                                         </constraints>
-                                        <state key="normal" image="NextBtn"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
+                                        <state key="normal" title="Далее" backgroundImage="NextBtn"/>
                                         <connections>
                                             <action selector="actNext:" destination="D12-zg-E7V" eventType="touchUpInside" id="VMP-7I-P4d"/>
                                         </connections>
@@ -1868,19 +1892,19 @@
                                             <constraint firstAttribute="width" constant="232" id="CGU-Fo-PQb"/>
                                             <constraint firstAttribute="height" constant="56" id="IOV-ob-IJF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас еще нет аккаунта?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbR-Ch-NIP">
-                                        <rect key="frame" x="126.66666666666669" y="444" width="123" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <rect key="frame" x="114.33333333333331" y="444" width="148" height="18"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-EL-11w">
-                                        <rect key="frame" x="117" y="464" width="140" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="107" y="470" width="161" height="35"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                         <state key="normal" title="Зарегистрироваться">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1947,7 +1971,8 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKd-G1-afP">
                                         <rect key="frame" x="20" y="608" width="335" height="57"/>
-                                        <state key="normal" image="NextBtn"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="18"/>
+                                        <state key="normal" title="Далее" backgroundImage="NextBtn"/>
                                         <connections>
                                             <action selector="actNext:" destination="kRD-Z2-8br" eventType="touchUpInside" id="Sg9-0c-8CE"/>
                                         </connections>
@@ -1959,7 +1984,7 @@
                                             <constraint firstAttribute="height" constant="50" id="uD4-5I-bFS"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Regular" family="Circe Rounded" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
                                         <connections>
                                             <action selector="actSms:" destination="kRD-Z2-8br" eventType="touchDown" id="Mv4-TG-2LL"/>
@@ -1972,7 +1997,7 @@
                                             <constraint firstAttribute="width" constant="232" id="J8F-Ey-iPE"/>
                                             <constraint firstAttribute="height" constant="56" id="tjG-jC-ja2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <fontDescription key="fontDescription" name="CirceRounded-Bold" family="Circe Rounded" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2049,14 +2074,14 @@
         <image name="blure" width="125" height="270"/>
         <image name="male" width="50" height="55"/>
         <image name="social" width="1024" height="1024"/>
+        <image name="whiteEditText" width="344" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wvB-6h-2wF"/>
-        <segue reference="lIC-W3-t1R"/>
-        <segue reference="WD5-F8-j9R"/>
-        <segue reference="u04-KV-sgb"/>
-        <segue reference="b6f-yR-dlE"/>
-        <segue reference="YjV-zL-5cP"/>
+        <segue reference="cUX-CH-Pk7"/>
+        <segue reference="H9A-Or-02P"/>
+        <segue reference="15U-0N-xSj"/>
+        <segue reference="zOZ-P1-as9"/>
+        <segue reference="f6c-D7-aVa"/>
         <segue reference="FYr-su-R1C"/>
         <segue reference="bcw-7U-LgS"/>
     </inferredMetricsTieBreakers>

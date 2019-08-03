@@ -110,8 +110,10 @@
                                   NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                                   [userDefaults setObject:@"true" forKey:@"token"];
                                   
-                                  if([responseObject objectForKey:@"user_info"] != NULL || [[responseObject objectForKey:@"user_info"] isEqualToString:@""]){
-                                      
+                
+                                  
+                                  
+                                  if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"Y"]) {
                                       NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
                                       NSMutableArray * arruser = [NSMutableArray array];
                                       arruser = [responseObject objectForKey:@"user_info"];
@@ -122,14 +124,10 @@
                                       [userDefaults setObject:[hot objectForKey:@"name"] forKey:@"name"];
                                       [userDefaults setObject:[hot objectForKey:@"sex"] forKey:@"sex"];
                                       
-                        
-                                  }
-                                  
-                                  
-                                  if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"Y"]) {
                                       [self performSegueWithIdentifier:@"endReg" sender:self];
 
                                   }else if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"N"]) {
+                                      
                                       [self performSegueWithIdentifier:@"nextReg" sender:self];
 
                                   }
