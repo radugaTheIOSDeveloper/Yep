@@ -86,9 +86,21 @@
 {
     NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
+    
+    
 
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    if ([[menuItems objectAtIndex:indexPath.row] isEqualToString:@"share"]) {
+        NSLog(@"goood share");
+        [self actSocial];
+    }
+    
+    
 }
 
 
@@ -99,14 +111,14 @@
     UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
 
     NSString * strrow = [menuItems objectAtIndex:indexPath.row];
+    
+    NSLog(@"row name  -  %@", [menuItems objectAtIndex:indexPath.row] );
 
     if ([strrow isEqualToString:@"list"]) {
         destViewController.title = [@"Архив заявок" capitalizedString];
     }else if ([strrow isEqualToString:@"settings"]){
         destViewController.title = [@"Настройки" capitalizedString];
 
-    }else if ([strrow isEqualToString:@"share"]){
-        [self actSocial];
 
     } else if ([strrow isEqualToString:@"exit"]){
         NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
