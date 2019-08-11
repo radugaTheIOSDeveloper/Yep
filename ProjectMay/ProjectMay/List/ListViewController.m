@@ -123,7 +123,7 @@
         [self.refreshControl endRefreshing];
 
         NSLog(@"%@",responceObject);
-        NSMutableArray * active = [responceObject valueForKey:@"offer_place"];
+        NSMutableArray * active = [responceObject valueForKey:@"place"];
         self.hotList = active;
         
         NSMutableArray * short_desc = [responceObject valueForKey:@"short_desc"];
@@ -132,7 +132,7 @@
         NSMutableArray * idl = [responceObject valueForKey:@"id"];
         self.idl = idl;
         
-        NSMutableArray * offer_type = [responceObject valueForKey:@"offer_type"];
+        NSMutableArray * offer_type = [responceObject valueForKey:@"otype"];
         self.offer_type = offer_type;
 
         NSLog(@"%ld, %ld" ,[self.hotList count], [self.short_desc  count]);

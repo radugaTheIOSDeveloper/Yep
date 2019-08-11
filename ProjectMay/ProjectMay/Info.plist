@@ -41,9 +41,12 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>CRO35.otf</string>
 		<string>AmaticSC-Regular.ttf</string>
 		<string>AmaticSC-Bold.ttf</string>
+		<string>CRO55.otf</string>
+		<string>CRO65.otf</string>
+		<string>CRO75.otf</string>
+		<string>CRO35.otf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

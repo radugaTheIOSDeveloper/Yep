@@ -18,6 +18,10 @@
 		CE6E25C4228AFA6C00E5DAC4 /* libKeychainItemWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6E25C5228AFA6C00E5DAC4 /* libKeychainItemWrapper.a */; };
 		CE73382322DCDEA800044D32 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73382222DCDEA800044D32 /* SocialViewController.m */; };
 		CE73382722DCE83400044D32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE73382622DCE83300044D32 /* GoogleService-Info.plist */; };
+		CE84C5E722F6EB9D00ADF2D7 /* CRO35.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE84C5E322F6EB8A00ADF2D7 /* CRO35.otf */; };
+		CE84C5E822F6EB9D00ADF2D7 /* CRO65.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE84C5E422F6EB8F00ADF2D7 /* CRO65.otf */; };
+		CE84C5E922F6EB9D00ADF2D7 /* CRO55.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE84C5E522F6EB9400ADF2D7 /* CRO55.otf */; };
+		CE84C5EA22F6EB9D00ADF2D7 /* CRO75.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE84C5E622F6EB9900ADF2D7 /* CRO75.otf */; };
 		CE8724E7227659A00088A449 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8724E6227659A00088A449 /* PageContentViewController.m */; };
 		CE8724EA22765A720088A449 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8724E922765A720088A449 /* RootViewController.m */; };
 		CE8724EE227679CF0088A449 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8724ED227679CF0088A449 /* AuthViewController.m */; };
@@ -75,14 +79,14 @@
 		CE5BEA02229943C400B88F3F /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CE5BEA04229943D800B88F3F /* SMSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSViewController.h; sourceTree = "<group>"; };
 		CE5BEA05229943D800B88F3F /* SMSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMSViewController.m; sourceTree = "<group>"; };
-		CE632F9922F58FB90006621B /* CRO35.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO35.otf; path = ../../../Design/CRO35.otf; sourceTree = "<group>"; };
-		CE632F9A22F58FB90006621B /* CRO65.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO65.otf; path = ../../../Design/CRO65.otf; sourceTree = "<group>"; };
-		CE632F9B22F58FB90006621B /* CRO55.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO55.otf; path = ../../../Design/CRO55.otf; sourceTree = "<group>"; };
-		CE632F9C22F58FB90006621B /* CRO75.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO75.otf; path = ../../../Design/CRO75.otf; sourceTree = "<group>"; };
 		CE6E25C5228AFA6C00E5DAC4 /* libKeychainItemWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKeychainItemWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE73382122DCDEA800044D32 /* SocialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		CE73382222DCDEA800044D32 /* SocialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		CE73382622DCE83300044D32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CE84C5E322F6EB8A00ADF2D7 /* CRO35.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO35.otf; path = ../../Design/CRO35.otf; sourceTree = "<group>"; };
+		CE84C5E422F6EB8F00ADF2D7 /* CRO65.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO65.otf; path = ../../Design/CRO65.otf; sourceTree = "<group>"; };
+		CE84C5E522F6EB9400ADF2D7 /* CRO55.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO55.otf; path = ../../Design/CRO55.otf; sourceTree = "<group>"; };
+		CE84C5E622F6EB9900ADF2D7 /* CRO75.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CRO75.otf; path = ../../Design/CRO75.otf; sourceTree = "<group>"; };
 		CE8724E5227659A00088A449 /* PageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		CE8724E6227659A00088A449 /* PageContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		CE8724E822765A720088A449 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -191,17 +195,6 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
-		CE632F9822F58F9A0006621B /* f */ = {
-			isa = PBXGroup;
-			children = (
-				CE632F9922F58FB90006621B /* CRO35.otf */,
-				CE632F9B22F58FB90006621B /* CRO55.otf */,
-				CE632F9A22F58FB90006621B /* CRO65.otf */,
-				CE632F9C22F58FB90006621B /* CRO75.otf */,
-			);
-			path = f;
-			sourceTree = "<group>";
-		};
 		CE8724E4227625B00088A449 /* Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +294,6 @@
 		CECEE6642275BFCE004A4A34 /* ProjectMay */ = {
 			isa = PBXGroup;
 			children = (
-				CE632F9822F58F9A0006621B /* f */,
 				CEB94F9F2288308200284829 /* API */,
 				CE9DBB4F228005BB006FC181 /* Menu */,
 				CE9DBB48227FFCBD006FC181 /* DetailTable */,
@@ -316,6 +308,10 @@
 				CECEE6692275BFCE004A4A34 /* ViewController.m */,
 				CECEE66B2275BFCE004A4A34 /* Main.storyboard */,
 				CECEE66E2275BFCE004A4A34 /* Assets.xcassets */,
+				CE84C5E322F6EB8A00ADF2D7 /* CRO35.otf */,
+				CE84C5E522F6EB9400ADF2D7 /* CRO55.otf */,
+				CE84C5E422F6EB8F00ADF2D7 /* CRO65.otf */,
+				CE84C5E622F6EB9900ADF2D7 /* CRO75.otf */,
 				CE206A1422F5B4B5003251FA /* AmaticSC-Bold.ttf */,
 				CE206A1322F5B4B4003251FA /* AmaticSC-Regular.ttf */,
 				CECEE6702275BFCE004A4A34 /* LaunchScreen.storyboard */,
@@ -452,11 +448,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE206A1522F5B4B5003251FA /* AmaticSC-Regular.ttf in Resources */,
+				CE84C5E722F6EB9D00ADF2D7 /* CRO35.otf in Resources */,
 				CECEE6722275BFCE004A4A34 /* LaunchScreen.storyboard in Resources */,
 				CE73382722DCE83400044D32 /* GoogleService-Info.plist in Resources */,
 				CECEE66F2275BFCE004A4A34 /* Assets.xcassets in Resources */,
+				CE84C5E922F6EB9D00ADF2D7 /* CRO55.otf in Resources */,
 				CE206A1622F5B4B5003251FA /* AmaticSC-Bold.ttf in Resources */,
 				CECEE66D2275BFCE004A4A34 /* Main.storyboard in Resources */,
+				CE84C5EA22F6EB9D00ADF2D7 /* CRO75.otf in Resources */,
+				CE84C5E822F6EB9D00ADF2D7 /* CRO65.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -236,7 +236,7 @@
 -(void)bidsList:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
     
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
-    [self.sessionManager GET:@"bids/"
+    [self.sessionManager GET:@"offers/"
                   parameters:nil
                     progress:nil
                      success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
@@ -258,7 +258,7 @@
 
 -(void)bidsDetail:(NSString *)idTable onSuccess:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
     
-    NSString * strBids = [NSString stringWithFormat:@"bids/?id=%@",idTable];
+    NSString * strBids = [NSString stringWithFormat:@"offers/?id=%@",idTable];
     
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
     [self.sessionManager GET:strBids
@@ -339,7 +339,7 @@
                              nil];
     
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
-    [self.sessionManager POST:@"bids/"
+    [self.sessionManager POST:@"offers/"
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
@@ -371,7 +371,7 @@
                              nil];
     
     [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
-    [self.sessionManager POST:@"bids/"
+    [self.sessionManager POST:@"offers/"
                    parameters:params
                      progress:nil
                       success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {

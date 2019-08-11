@@ -59,13 +59,13 @@
         NSLog(@"detail = %@",responceObject);
         
 
-        NSDictionary * arr = [responceObject objectForKey:@"offer_place"];
+        NSDictionary * arr = [responceObject objectForKey:@"place"];
         NSDictionary * arrcat = [arr objectForKey:@"category"];
         
         self.name.text = [arr objectForKey:@"name"];
         self.description_detail.text = [arr objectForKey:@"description"];
         self.address.text = [arr objectForKey:@"address"];
-        self.offer_text.text = [responceObject objectForKey:@"offer_text"];
+        self.offer_text.text = [responceObject objectForKey:@"text"];
         self.labelCategory.text =[arrcat objectForKey:@"cat_name"];
         
         NSLog(@"%@", arrcat);
