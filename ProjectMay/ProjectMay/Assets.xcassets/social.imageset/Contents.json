@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "иконка-для-ios.png",
+      "filename" : "TestSocial.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "TestSocial-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "TestSocial-2.png",
       "scale" : "3x"
     }
   ],

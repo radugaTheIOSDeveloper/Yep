@@ -10,7 +10,7 @@
 #import "API.h"
 #import "SmsRegistr.h"
 #import "LoginViewController.h"
-@interface AuthViewController ()
+@interface AuthViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) NSString * messageAlert;
 
@@ -26,7 +26,8 @@
     [self.view addGestureRecognizer:tap];
     
 
-
+    [self.scrollView setContentOffset:CGPointMake(0, _phoneTextOutlet.frame.origin.y)];
+    
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;
     [self.view addSubview:self.activityIndicator];
@@ -114,9 +115,11 @@
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
     
-    CGPoint scrollPoint = CGPointMake(0, 130);
-    [self.scrollView setContentOffset:scrollPoint animated:NO];
+
     
+    [self.scrollView setContentOffset:CGPointMake(0, 120) animated:NO];
+
+
 }
 
 -(void)textFieldDidEndEditing:(UITextField*)textField{

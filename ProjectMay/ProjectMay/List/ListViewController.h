@@ -15,4 +15,8 @@
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) UIRefreshControl * refreshControl;
 
+
+
+
+
 @end

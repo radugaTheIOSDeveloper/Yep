@@ -53,12 +53,19 @@
     NSLog(@"%@", [[API apiManager]getToken]);
     
     self.addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.addBtn.frame = CGRectMake(self.view.frame.size.width/2 -50 , self.view.frame.size.height/2 + 120, 100, 100);
+    //self.addBtn.frame = CGRectMake(self.view.frame.size.width/2 -50 , self.view.frame.size.height/2 + 150, 100, 100);
     [self.addBtn addTarget:self action:@selector(addBtnActn:) forControlEvents:UIControlEventTouchUpInside];
     [self.addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.addBtn setBackgroundImage:[UIImage imageNamed:@"AddButton"] forState:UIControlStateNormal];
-    [self.view addSubview:self.addBtn];
+    self.addBtn.translatesAutoresizingMaskIntoConstraints = NO;
     
+    [self.view addSubview:self.addBtn];
+
+    NSLayoutConstraint *blueTop = [NSLayoutConstraint constraintWithItem:self.addBtn attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-10];
+    [self.view addConstraint:blueTop];
+
+        NSLayoutConstraint *center = [NSLayoutConstraint constraintWithItem:self.addBtn attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:1];
+    [self.view addConstraint:center];
 
     if (arrImg == 0) {
     
@@ -159,13 +166,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat crenHaight = screenRect.size.height;
     
     if ([self.hotList count] == 0) {
-        return 600.f;
+        return crenHaight;
     }else{
         return 80.f;
     }
-    
+    return crenHaight;
+
 }
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *) tableView{
@@ -214,7 +224,6 @@
         UIImageView * image = (UIImageView *)[cellACtive.contentView viewWithTag:10];
         UILabel * nameSam = (UILabel *)[cellACtive.contentView viewWithTag:11];
         UILabel * detail = (UILabel *)[cellACtive.contentView viewWithTag:12];
-        UILabel * date = (UILabel *)[cellACtive.contentView viewWithTag:13];
         UIImageView * imageTwo = (UIImageView *)[cellACtive.contentView viewWithTag:14];
 
         NSDictionary * hot = [self.hotList objectAtIndex:indexPath.row];
@@ -235,11 +244,8 @@
     }
     
         imageTwo.image = [UIImage imageNamed:@"NextHotImg"];
-        nameSam.textColor = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
-        detail.textColor = [UIColor lightGrayColor];
         nameSam.text = [hot objectForKey:@"name"];
         detail.text = [self.short_desc objectAtIndex:indexPath.row];
-        date.text = @"10:08";
         
     return cellACtive;
 

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 - (IBAction)actReg:(id)sender;
-
 - (IBAction)actNext:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *logoEnter;
+
 @end

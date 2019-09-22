@@ -10,7 +10,7 @@
 #import "SMSViewController.h"
 #import "API.h"
 #import "AuthViewController.h"
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) NSString * messageAlert;
 
@@ -20,15 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 
-    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
+    [self.view setUserInteractionEnabled:YES];
+
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.leftBarButtonItem = nil;
+    
+    [self.scrollView setDelegate:self];
+
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;
@@ -63,6 +67,10 @@
 
 
 
+
+
+
+
 -(void) dismissKeyboard{
     
     [self.phoneNumber resignFirstResponder];
@@ -70,16 +78,21 @@
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
     
-    CGPoint scrollPoint = CGPointMake(0, 130);
-    [self.scrollView setContentOffset:scrollPoint animated:NO];
-    
+    [self.scrollView layoutIfNeeded];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:.25 animations:^{
+            [self.scrollView setContentOffset:CGPointMake(0, 120) animated:NO];
+        }];
+    });
+  
 }
 
+
 -(void)textFieldDidEndEditing:(UITextField*)textField{
-    
     [self.scrollView setContentOffset:CGPointZero animated:NO];
-    
+
 }
+
 
 - (BOOL) textFieldShouldClear:(UITextField *)textField{
     
@@ -91,6 +104,10 @@
     // [textField resignFirstResponder];
     
     return NO;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

@@ -76,4 +76,9 @@
           onSuccess:(void(^)(NSDictionary * responseObject)) success
           onFailure:(void(^)(NSError * error, NSInteger statusCode)) failure;
 
+
+-(void) archiveList:(void(^)(NSDictionary * responceObject))success
+       onFailure:(void(^)(NSError * error, NSInteger statusCode))failure;
+
+
 @end

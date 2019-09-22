@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailTable : UIViewController
+@interface DetailTable : UIViewController <UIGestureRecognizerDelegate>
 
 - (IBAction)backTable:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageDetail;

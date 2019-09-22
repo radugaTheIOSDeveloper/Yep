@@ -390,5 +390,28 @@
                       }];
 }
 
+#pragma mark archive list
+-(void)archiveList:(void (^)(NSDictionary *))success onFailure:(void (^)(NSError *, NSInteger))failure{
+    
+    [self.sessionManager.requestSerializer setValue:[self getToken] forHTTPHeaderField:@"Authorization"];
+    [self.sessionManager GET:@"archive/"
+                  parameters:nil
+                    progress:nil
+                     success:^(NSURLSessionTask *task, NSDictionary*  responseObject) {
+                         
+                         if(success){
+                             success(responseObject);
+                             NSLog(@"%@",responseObject);
+                         }
+                     }
+                     failure:^(NSURLSessionTask *operation, NSError *error) {
+                         NSLog(@"error%@",error);
+                         if(failure){
+                             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                             failure(error, response.statusCode);
+                         }
+                     }];
+}
+
 
 @end

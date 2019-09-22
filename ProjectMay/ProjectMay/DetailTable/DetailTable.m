@@ -9,8 +9,20 @@
 #import "DetailTable.h"
 #import "API.h"
 
-@interface DetailTable ()
+@interface DetailTable (){
+    UITapGestureRecognizer *tap;
+    BOOL isFullScreen;
+    CGRect prevFrame;
+}
+
 @property (strong, nonatomic) NSString * messageAlert;
+@property (strong, nonatomic) UIButton * addBtn;
+@property (strong, nonatomic) UIButton * testBtn;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (strong, nonatomic)  UIProgressView *progressView;
+@property (strong, nonatomic) UIView * mView;
+@property NSTimer * myTimer;
+
 
 @end
 
@@ -31,11 +43,52 @@
     
     [self.view addSubview:self.activityIndicator];
     
+    
+    isFullScreen = FALSE;
+    tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgToFullScreen)];
+    tap.delegate = self;
+    self.view.backgroundColor = [UIColor purpleColor];
+
+//    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 -50 , self.view.frame.size.height/2 + 150, 100, 100)];
+//    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+//    [_imageView setClipsToBounds:YES];
+//    _imageView.userInteractionEnabled = YES;
+//    _imageView.image = [UIImage imageNamed:@"AddButton"];
+//
+//    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgToFullScreen:)];
+//    tapper.numberOfTapsRequired = 1;
+//
+//    [_imageView addGestureRecognizer:tapper];
+//
+//    [self.view addSubview:_imageView];
+//
+//        NSLayoutConstraint *blueTop = [NSLayoutConstraint constraintWithItem:_imageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-50];
+//        [self.view addConstraint:blueTop];
+//
+//        NSLayoutConstraint *center = [NSLayoutConstraint constraintWithItem:_imageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:1];
+//        [self.view addConstraint:center];
+
+    
+ 
+    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+    self.progressView.trackTintColor = [UIColor whiteColor];
+    self.progressView.progressTintColor = [UIColor redColor];
+    
+//    [_imageView  addSubview:self.progressView];
+    
+
+    
+    
+    
     self.activityIndicator.center = CGPointMake([[UIScreen mainScreen]bounds].size.width/2, [[UIScreen mainScreen]bounds].size.height/2);
     self.activityIndicator.color = [UIColor colorWithRed:108/255.0f green:196/255.0f blue:207/255.0f alpha:1];
     [self.view setUserInteractionEnabled:YES];
     
     self.imageType.image = [UIImage imageNamed:self.imageName];
+    
+    NSLog(@"image name %@",self.imageName);
+    
+
     
     [self.activityIndicator startAnimating];
     self.activityIndicator.alpha = 1.f;
@@ -48,6 +101,64 @@
     
 }
 
+-(void)imgToFullScreen:(UITapGestureRecognizer*)sender {
+    
+    
+ //   if (!isFullScreen) {
+        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+            
+            
+            _imageView.image =[UIImage imageNamed:@"BackgroundHelp"];
+            prevFrame = _imageView.frame;
+            [_imageView setFrame:[[UIScreen mainScreen] bounds]];
+            self.progressView.frame = CGRectMake(1, 1, _imageView.frame.size.width, 100);
+            
+            
+        }completion:^(BOOL finished){
+            
+            isFullScreen = TRUE;
+            if (@available(iOS 10.0, *)) {
+                self.myTimer = [NSTimer scheduledTimerWithTimeInterval:0.025 repeats:YES block:^(NSTimer * _Nonnull timer) {
+                    static int count = 0;
+                    count ++;
+                    if (count <= 100) {
+                        
+                        [self.progressView setProgress:(float)(count/100.0f) animated:YES];
+                    }else{
+                        [self.myTimer invalidate];
+                        self.myTimer = nil;
+                        [self.progressView setProgress:(float)(0) animated:NO];
+                        count = 0;
+                        [self finish];
+                    }
+                    
+                }];
+            } else {
+                
+            }
+            
+            
+        }];
+        
+        return;
+
+   
+}
+
+
+-(void)finish{
+    
+    
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        _imageView.image =[UIImage imageNamed:@"AddButton"];
+        
+        [_imageView setFrame:prevFrame];
+    }completion:^(BOOL finished){
+        isFullScreen = FALSE;
+    }];
+    return;
+
+}
 
 -(void) bids {
     
