@@ -61,8 +61,16 @@
 
                                   [self.view setUserInteractionEnabled:YES];
 
-                                  [self performSegueWithIdentifier:@"sms" sender:self];
+                         
+                                  UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                                                             SmsRegistr *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"smsRegistr"];
+                                                                                                                             pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+        
+        
+                                                        pvc.phoneNumber = numTel;
+                                                        [self presentViewController:pvc animated:YES completion:nil];
 
+        
 
                               }  onFailure:^(NSError *error, NSInteger statusCode) {
 
@@ -164,8 +172,11 @@
 
 
 - (IBAction)au:(id)sender {
-    [self performSegueWithIdentifier:@"authd" sender:self];
-
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                                                UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+                                                                                                                pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                                                                                [self presentViewController:pvc animated:YES completion:nil];
 }
 
 - (IBAction)nextBtn:(id)sender {

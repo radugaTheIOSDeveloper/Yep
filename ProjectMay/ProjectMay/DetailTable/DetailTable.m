@@ -95,7 +95,12 @@
     
     [self.view setUserInteractionEnabled:NO];
     
-    [self backButton];
+    
+    UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"BackWhite"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
+        self.navigationItem.leftBarButtonItem = button2;
+       self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+  //  [self backButton];
     
     [self bids];
     
@@ -216,7 +221,8 @@
 }
 
 - (void)backTapped:(id)sender {
-    [self performSegueWithIdentifier:@"backTable" sender:self];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -259,8 +265,11 @@
                            self.activityIndicator.alpha = 0.f;
                            [self.activityIndicator stopAnimating];
                            
-                           [self performSegueWithIdentifier:@"backTable" sender:self];
-                           
+                           UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                                                                                        UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navController"];
+                                                                                                                                                        pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                   
+                                                                              [self presentViewController:pvc animated:YES completion:nil];
                            
                        } onFailure:^(NSError *error, NSInteger statusCode) {
                            

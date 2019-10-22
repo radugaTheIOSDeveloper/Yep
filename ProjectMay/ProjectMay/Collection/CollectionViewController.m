@@ -33,7 +33,6 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationItem.hidesBackButton = YES;
-    [self backButton];
     
     _cat_name = [NSMutableArray array];
     _cat_id = [NSMutableArray array];
@@ -50,6 +49,12 @@
     self.activityIndicator.alpha = 1.f;
     [self.view setUserInteractionEnabled:NO];
     [self categories];
+    
+    
+    
+    UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"BackWhite"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
+        self.navigationItem.leftBarButtonItem = button2;
+       self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 
@@ -91,15 +96,17 @@
 }
 
 
--(void) backButton {
-    
-    UIBarButtonItem * btn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"BackWhite"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
-    self.navigationItem.leftBarButtonItem = btn;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
-}
+
 - (void)backTapped:(id)sender {
-    [self performSegueWithIdentifier:@"backColl" sender:self];
+
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                                                              UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navController"];
+                                                                                                                              pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+         
+                                                    [self presentViewController:pvc animated:YES completion:nil];
+    
+    
 }
 
 

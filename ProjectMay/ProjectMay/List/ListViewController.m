@@ -258,6 +258,9 @@
     
     self.idTable = [NSString stringWithFormat:@"%@",[self.idl objectAtIndex:indexPath.row]];
     
+    
+    
+    
     [self performSegueWithIdentifier:@"detail" sender:self];
 
 }
@@ -265,7 +268,14 @@
 
 -(void)addBtnActn:(UIButton *)sender {
     
-    [self performSegueWithIdentifier:@"collection" sender:self];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navControlls"];
+    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+           
+    [self presentViewController:pvc animated:YES completion:nil];
+    
+    
 }
 
 

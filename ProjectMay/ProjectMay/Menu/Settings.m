@@ -22,14 +22,14 @@ NSString * idCitySettings;
     [super viewDidLoad];
     
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
-    self.navigationItem.hidesBackButton = YES;
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+//                                                  forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.view.backgroundColor = [UIColor clearColor];
+//    self.navigationItem.hidesBackButton = YES;
+//    [self.navigationController.navigationBar setTitleTextAttributes:
+//     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
 
     
@@ -104,7 +104,7 @@ NSString * idCitySettings;
     
 }
 - (void)backTapped:(id)sender {
-    [self performSegueWithIdentifier:@"menuSettings" sender:self];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) getCiys {

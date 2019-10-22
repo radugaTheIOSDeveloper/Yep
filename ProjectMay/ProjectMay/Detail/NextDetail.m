@@ -83,7 +83,13 @@
 
 
 - (void)backTapped:(id)sender {
-    [self performSegueWithIdentifier:@"backs" sender:self];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navControlls"];
+        pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+                                               [self presentViewController:pvc animated:YES completion:nil];
+    
 }
 
 #pragma mark API

@@ -129,7 +129,10 @@ NSString * idCity;
                            [userDefaults setObject:name forKey:@"name"];
                            
                            
-                           [self performSegueWithIdentifier:@"listViewController" sender:self];
+                         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                                                    UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navController"];
+                                                                                                                    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                                                                                    [self presentViewController:pvc animated:YES completion:nil];
 
     }
      

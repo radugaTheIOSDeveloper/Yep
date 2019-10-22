@@ -31,7 +31,7 @@
     self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.leftBarButtonItem = nil;
     
-    [self.scrollView setDelegate:self];
+   // [self.scrollView setDelegate:self];
 
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -78,12 +78,14 @@
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
     
-    [self.scrollView layoutIfNeeded];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:.25 animations:^{
-            [self.scrollView setContentOffset:CGPointMake(0, 120) animated:NO];
-        }];
-    });
+    
+    [self.scrollView setContentOffset:CGPointMake(0, 120) animated:NO];
+
+//    [self.scrollView layoutIfNeeded];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [UIView animateWithDuration:.25 animations:^{
+//        }];
+//    });
   
 }
 
@@ -139,7 +141,15 @@
                            
                            [self.view setUserInteractionEnabled:YES];
                            
-                           [self performSegueWithIdentifier:@"smsAuth" sender:self];
+        
+
+                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    SMSViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"smsViewController"];
+                    pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                    pvc.phoneNumber = numTel;
+        
+        
+                    [self presentViewController:pvc animated:YES completion:nil];
                            
                            
                        }  onFailure:^(NSError *error, NSInteger statusCode) {
@@ -170,8 +180,12 @@
 
 }
 - (IBAction)actReg:(id)sender {
-    [self performSegueWithIdentifier:@"regs" sender:self];
-
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                       UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"authViewController"];
+                       pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                       [self presentViewController:pvc animated:YES completion:nil];
+    
 }
 
 - (IBAction)actNext:(id)sender {

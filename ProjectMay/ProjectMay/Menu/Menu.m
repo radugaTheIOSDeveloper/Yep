@@ -41,7 +41,6 @@
     
 //
 
-    [self backButton];
 
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -66,6 +65,11 @@
 
     
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self backButton];
+}
+    
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -115,7 +119,10 @@
     NSLog(@"row name  -  %@", [menuItems objectAtIndex:indexPath.row] );
 
     if ([strrow isEqualToString:@"list"]) {
+        
+        
         destViewController.title = [@"Архив заявок" capitalizedString];
+        
     }else if ([strrow isEqualToString:@"settings"]){
         destViewController.title = [@"Настройки" capitalizedString];
 
@@ -158,7 +165,10 @@
 }
 
 - (void)backTapped:(id)sender {
-    [self performSegueWithIdentifier:@"closeMenu" sender:self];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
+    //[self performSegueWithIdentifier:@"closeMenu" sender:self];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

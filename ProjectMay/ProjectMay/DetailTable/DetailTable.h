@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *description_detail;
 @property (weak, nonatomic) IBOutlet UITextView *offer_text;
+
 - (IBAction)actAccept:(id)sender;
 
 @end

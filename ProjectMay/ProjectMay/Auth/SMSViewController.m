@@ -119,11 +119,19 @@
                                       [userDefaults setObject:[hot objectForKey:@"date_of_birth"] forKey:@"birth_date"];
                                       [userDefaults setObject:[hot objectForKey:@"name"] forKey:@"name"];
                                       [userDefaults setObject:[hot objectForKey:@"sex"] forKey:@"sex"];
-                                      [self performSegueWithIdentifier:@"loginfull" sender:self];
+                                    
+                                      
+                                      UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                           UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navController"];
+                                                           pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                           [self presentViewController:pvc animated:YES completion:nil];
                                       
                                   }else if ([[responseObject objectForKey:@"existing_user"] isEqualToString:@"N"]) {
                                       
-                                      [self performSegueWithIdentifier:@"loginno" sender:self];
+                                         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"finalRegistration"];
+                                                                                            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                                                            [self presentViewController:pvc animated:YES completion:nil];
                                       
                                   }
                                   

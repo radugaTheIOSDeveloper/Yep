@@ -38,11 +38,31 @@
             
 
             if ([_tokenStatus isEqualToString:@"true"]) {
-                [self performSegueWithIdentifier:@"goodapp" sender:self];
+                
+                
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                            UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navController"];
+                            pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                            [self presentViewController:pvc animated:YES completion:nil];
+                
+                
+                
             }else if ([_tokenStatus isEqualToString:@"login"]){
-                [self performSegueWithIdentifier:@"login" sender:self];
+                
+                
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+                pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                [self presentViewController:pvc animated:YES completion:nil];
+                
             }else {
-                [self performSegueWithIdentifier:@"instruction" sender:self];
+                
+                
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"rootViewController"];
+                pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                [self presentViewController:pvc animated:YES completion:nil];
+                
 
             }
             

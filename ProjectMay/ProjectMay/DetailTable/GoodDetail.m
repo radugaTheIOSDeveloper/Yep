@@ -24,21 +24,32 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationItem.hidesBackButton = YES;
     
-    [self backButton];
+    
+    
+    UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"CloseBtn"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
+        self.navigationItem.leftBarButtonItem = button2;
+       self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
 }
 
--(void) backButton {
-    
-    UIBarButtonItem * btn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"CloseBtn"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
-    self.navigationItem.rightBarButtonItem = btn;
-    
-  //  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
-}
+//-(void) backButton {
+//    
+//    UIBarButtonItem * btn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"CloseBtn"] style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
+//    self.navigationItem.rightBarButtonItem = btn;
+//    
+//  //  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    
+//}
 
 - (void)backTapped:(id)sender {
-    [self performSegueWithIdentifier:@"closeDetailGood" sender:self];
+    
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                                                              UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navController"];
+                                                                                                                              pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+         
+                                                    [self presentViewController:pvc animated:YES completion:nil];
+    
 }
 
 
@@ -49,4 +60,12 @@
 
 
 
+- (IBAction)gAct:(id)sender {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                                                                              UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"navController"];
+                                                                                                                              pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+         
+                                                    [self presentViewController:pvc animated:YES completion:nil];
+}
 @end

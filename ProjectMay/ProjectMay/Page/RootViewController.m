@@ -112,7 +112,12 @@
 
 - (IBAction)regButton:(id)sender {
     
-    [self performSegueWithIdentifier:@"auth" sender:self];
+    
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                           UIViewController *pvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"authViewController"];
+                           pvc.modalPresentationStyle = UIModalPresentationFullScreen;
+                           [self presentViewController:pvc animated:YES completion:nil];
 
 }
 @end

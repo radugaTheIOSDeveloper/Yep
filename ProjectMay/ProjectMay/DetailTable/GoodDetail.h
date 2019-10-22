@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GoodDetail : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *goodAct;
+- (IBAction)gAct:(id)sender;
 
 @end
